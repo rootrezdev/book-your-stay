@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <script>
+        (function (window, document) {
+        var loader = function () {
+            var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+            script.src = "http://10.254.101.90/embed_widget/dist/widget.min.js";
+            tag.parentNode.insertBefore(script, tag);
+        };
+        window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+        })(window, document);
+        </script>
+    </head>
+    <body>            
+        <div id="RootRezWidget"></div>        
+    </body>
+</html>
