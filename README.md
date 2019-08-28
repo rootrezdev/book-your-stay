@@ -4,7 +4,7 @@
 [![Code](https://thomassileo.name/blog/2014/03/27/building-an-embeddable-javascript-widget-third-party-javascript/)](https://thomassileo.name/blog/2014/03/27/building-an-embeddable-javascript-widget-third-party-javascript/)
 
 
-Sample third party embed script js
+JS file built for third party widget
 ```text
 dist/widget.min.js
 ```
