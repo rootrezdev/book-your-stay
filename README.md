@@ -1,9 +1,28 @@
-# book-your-stay
+# Book Your Stay javascripty third party widget
 
-Sample third party script
+## Code refreed to do this
+[![Code](https://thomassileo.name/blog/2014/03/27/building-an-embeddable-javascript-widget-third-party-javascript/)](https://thomassileo.name/blog/2014/03/27/building-an-embeddable-javascript-widget-third-party-javascript/)
 
+
+Sample third party embed script js
+```text
+dist/widget.min.js
+```
+, is the js file we built to share in third party script
+
+Files to do any changes in widget html or css are the follows
+```text
+template/form.html
+style/widget.css
+```
+After any changes in these file do the build again for creating the widget.min.js file
+```bash
+node_modules/requirejs/bin/r.js -o embed.build.js
+```
+
+
+## third party widget loading script
 You can refer the demo/index.html for detail
-
 ```text
 <script>
     (function (window, document) {
@@ -26,4 +45,8 @@ You can refer the demo/index.html for detail
         window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
     })(window, document);
 </script>
+```
+Place this script inside the third party web page and add the following 'div' inside the web page where it need to show the widget
+```text
+<div id="RootRezWidget"></div> 
 ```
