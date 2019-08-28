@@ -2,12 +2,23 @@
     <head>
         <script>
         (function (window, document) {
-        var loader = function () {
-            var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
-            script.src = "http://10.254.101.90/embed_widget/dist/widget.min.js";
-            tag.parentNode.insertBefore(script, tag);
-        };
-        window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+            var loader = function () {
+
+                var default_checkin = "";
+                var min_checkin = "2019-08-28"; 
+                var max_checkout = "";
+                var submission_url = "http://alta.publisher.localhost/search";
+
+                var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];                 
+                s.id = "rootrezScript";
+                s.src = "http://10.254.101.90/book_your_stay_widget/dist/widget.min.js";
+                s.setAttribute("data-default_checkin", default_checkin);
+                s.setAttribute("data-min_checkin",min_checkin);
+                s.setAttribute("data-max_checkout",max_checkout);
+                s.setAttribute("data-submission_url",submission_url);
+                t.parentNode.insertBefore(s, t);
+            };
+            window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
         })(window, document);
         </script>
     </head>
