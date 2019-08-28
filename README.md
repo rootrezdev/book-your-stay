@@ -1,6 +1,6 @@
-# Book Your Stay javascripty third party widget
+# 'Book Your Stay' javascript third party widget
 
-## Code refreed to do this
+## Code referred to do this
 [![Code](https://thomassileo.name/blog/2014/03/27/building-an-embeddable-javascript-widget-third-party-javascript/)](https://thomassileo.name/blog/2014/03/27/building-an-embeddable-javascript-widget-third-party-javascript/)
 
 
@@ -10,18 +10,17 @@ dist/widget.min.js
 ```
 , is the js file we built to share in third party script
 
-Files to do any changes in widget html or css are the follows
+Files to do any change in widget html or css are the follows
 ```text
 template/form.html
 style/widget.css
 ```
-After any changes in these file do the build again for creating the widget.min.js file
+After any changes in these files, do the build again for creating the widget.min.js file
 ```bash
 node_modules/requirejs/bin/r.js -o embed.build.js
 ```
 
-
-## third party widget loading script
+## Third party widget loading script sample
 You can refer the demo/index.html for detail
 ```text
 <script>
