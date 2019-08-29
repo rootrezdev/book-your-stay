@@ -26,7 +26,7 @@ node_modules/requirejs/bin/r.js -o embed.build.js
 
 You can refer to index.html on your localhost or the demo site [https://assets.rootrez.com/book-your-stay/](https://assets.rootrez.com/book-your-stay/).
 
-```text
+```html
 <script>
     (function (window, document) {
         var loader = function () {
@@ -54,6 +54,23 @@ You can refer to index.html on your localhost or the demo site [https://assets.r
 <div id="RootRezWidget"></div> 
 ```
 
+For affiliates you would adjust the submission_url as follows:
+
+```javascript
+var submission_url = "http://lodging.bookwesteros.com/referral?code=rz-78th-annual-widget-festival";
+```
+
+For discounts and value-adds:
+
+```javascript
+var submission_url = "http://lodging.bookwesteros.com/?PromoCode=FunPack";
+```
+
+And for both referral and discount/value-add:
+
+```javascript
+var submission_url = "http://lodging.bookwesteros.com/referral?code=rz-78th-annual-widget-festival&PromoCode=FunPack";
+```
 ## Settings
 
 | Variable      | Description |
