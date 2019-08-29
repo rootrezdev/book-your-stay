@@ -39,7 +39,6 @@ You can refer to index.html on your localhost or the demo site [https://assets.r
             var min_checkin = ""; // YYYY-MM-DD (e.g. 2020-06-01)
             var max_checkout = ""; // YYYY-MM-DD (e.g. 2020-06-28)
             
-
             var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];                 
             s.id = "rootrezScript";
             s.src = "https://assets.rootrez.com/book_your_stay/dist/widget.min.js";
