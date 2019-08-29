@@ -66,7 +66,7 @@ For discounts and value-adds:
 var submission_url = "https://lodging.bookwesteros.com/?PromoCode=FunPack";
 ```
 
-And for both referral and discount/value-add:
+And for an affiliate with a discount/value-add:
 
 ```javascript
 var submission_url = "https://lodging.bookwesteros.com/referral?code=rz-78th-annual-widget-festival&PromoCode=FunPack";
