@@ -74,6 +74,24 @@ define(['jquery', 'text!template/form.html',
             var today_date  = yyyy + "-" + mm + "-" + dd;
             settings.min_checkin = today_date;
         }
+        if(settings.max_checkout == ""){
+            var max_checkout = new Date( settings.min_checkin);
+            max_checkout.setDate(max_checkout.getDate()+28);
+            var checkout_dd = max_checkout.getDate();
+            var checkout_mm = max_checkout.getMonth()+1;
+            var checkout_yyyy = max_checkout.getFullYear();
+            if(checkout_dd < 10) 
+            {
+                checkout_dd = '0' + checkout_dd;
+            } 
+
+            if(checkout_mm < 10) 
+            {
+                checkout_mm = '0' + checkout_mm;
+            } 
+            var checkout_date  = checkout_yyyy + "-" + checkout_mm + "-" + checkout_dd;
+            settings.max_checkout = checkout_date;
+        }
         // here I have used the $form pointer to initialize the events on the form
         $('#rootrez-widget-form #rootrez_daterangepicker').dateRangePicker({
             startDate: settings.min_checkin,
