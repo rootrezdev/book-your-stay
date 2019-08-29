@@ -1,6 +1,6 @@
 # Book Your Stay Widget
 
-Stay date and guest selection Widget for publishers and affiliates to setup on their website. Adjust the settings in the sample below and provide the HTML/JavaScript snippet to the client. [Click here](https://assets.rootrez.com/book-your-stay/) to view the demo.
+Stay date and guest selection widget for publishers and affiliates to setup on their website. Adjust the settings in the sample below and provide the HTML/JavaScript snippet to the client. [Click here](https://assets.rootrez.com/book-your-stay/) to view the demo.
 
 ## Reference
 [Building an embeddable Javascript widget](https://thomassileo.name/blog/2014/03/27/building-an-embeddable-javascript-widget-third-party-javascript/)
