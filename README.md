@@ -8,7 +8,7 @@ This a widget publishers and affiliates can setup on their website. Adjust the s
 Build file to share in third party script:
 
 ```text
-dist/widget.min.js
+widget.min.js
 ```
 
 Files to do any change in widget html or css are the follows:
