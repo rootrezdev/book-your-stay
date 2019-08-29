@@ -8,7 +8,7 @@ This a widget publishers and affiliates can setup on their website. Adjust the s
 Build file to share in third party script:
 
 ```text
-dist/widget.min.js
+widget.min.js
 ```
 
 Files to do any change in widget html or css are the follows:
@@ -41,7 +41,7 @@ You can refer to index.html on your localhost or the demo site [https://assets.r
             
             var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];                 
             s.id = "rootrezScript";
-            s.src = "https://assets.rootrez.com/book_your_stay/dist/widget.min.js";
+            s.src = "https://assets.rootrez.com/book_your_stay/widget.min.js";
             s.setAttribute("data-default_checkin", default_checkin);
             s.setAttribute("data-min_checkin",min_checkin);
             s.setAttribute("data-max_checkout",max_checkout);
