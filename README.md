@@ -24,17 +24,21 @@ node_modules/requirejs/bin/r.js -o embed.build.js
 
 ## Third party widget loading script sample
 
-You can refer the demo/index.html for detail
+You can refer to index.html on your localhost or the demo site [https://assets.rootrez.com/book-your-stay/](https://assets.rootrez.com/book-your-stay/).
 
 ```text
 <script>
     (function (window, document) {
         var loader = function () {
 
-            var default_checkin = "";
-            var min_checkin = "2019-08-28"; 
-            var max_checkout = "";
+            // required: 
             var submission_url = "https://lodging.bookwesteros.com";
+            
+            // optional: 
+            var default_checkin = ""; // YYYY-MM-DD (e.g. 2020-06-07)
+            var min_checkin = ""; // YYYY-MM-DD (e.g. 2020-06-01)
+            var max_checkout = ""; // YYYY-MM-DD (e.g. 2020-06-28)
+            
 
             var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];                 
             s.id = "rootrezScript";
@@ -55,7 +59,7 @@ You can refer the demo/index.html for detail
 
 | Variable      | Description |
 | ----------- | ----------- |
+| submission_url   | Required. The publishers URL to submit to        |
 | default_checkin      | Date the date picker will default to        |
 | min_checkin   | The minimum allowed check-in date        |
 | max_checkout   | The maximum allowed check-out date        |
-| submission_url   | The publishers URL to submit to        |
