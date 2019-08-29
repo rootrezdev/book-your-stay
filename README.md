@@ -57,19 +57,19 @@ You can refer to index.html on your localhost or the demo site [https://assets.r
 For affiliates you would adjust the submission_url as follows:
 
 ```javascript
-var submission_url = "http://lodging.bookwesteros.com/referral?code=rz-78th-annual-widget-festival";
+var submission_url = "https://lodging.bookwesteros.com/referral?code=rz-78th-annual-widget-festival";
 ```
 
 For discounts and value-adds:
 
 ```javascript
-var submission_url = "http://lodging.bookwesteros.com/?PromoCode=FunPack";
+var submission_url = "https://lodging.bookwesteros.com/?PromoCode=FunPack";
 ```
 
 And for both referral and discount/value-add:
 
 ```javascript
-var submission_url = "http://lodging.bookwesteros.com/referral?code=rz-78th-annual-widget-festival&PromoCode=FunPack";
+var submission_url = "https://lodging.bookwesteros.com/referral?code=rz-78th-annual-widget-festival&PromoCode=FunPack";
 ```
 ## Settings
 
