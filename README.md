@@ -3,8 +3,7 @@
 ## Reference
 [Building an embeddable Javascript widget](https://thomassileo.name/blog/2014/03/27/building-an-embeddable-javascript-widget-third-party-javascript/)
 
-
-Building file to share in third party script:
+Build file to share in third party script:
 
 ```text
 dist/widget.min.js
