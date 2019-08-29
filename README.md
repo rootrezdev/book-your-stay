@@ -32,11 +32,11 @@ You can refer the demo/index.html for detail
             var default_checkin = "";
             var min_checkin = "2019-08-28"; 
             var max_checkout = "";
-            var submission_url = "http://alta.publisher.localhost/search";
+            var submission_url = "https://lodging.bookwesteros.com";
 
             var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];                 
             s.id = "rootrezScript";
-            s.src = "http://10.254.101.90/book_your_stay_widget/dist/widget.min.js";
+            s.src = "https://assets.rootrez.com/book_your_stay/dist/widget.min.js";
             s.setAttribute("data-default_checkin", default_checkin);
             s.setAttribute("data-min_checkin",min_checkin);
             s.setAttribute("data-max_checkout",max_checkout);
