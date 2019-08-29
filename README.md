@@ -1,7 +1,7 @@
 # 'Book Your Stay' javascript third party widget
 
 ## Reference
-[https://thomassileo.name/blog/2014/03/27/building-an-embeddable-javascript-widget-third-party-javascript/](Building an embeddable Javascript widget (third-party javascript))
+[Building an embeddable Javascript widget](https://thomassileo.name/blog/2014/03/27/building-an-embeddable-javascript-widget-third-party-javascript/)
 
 
 Building file to share in third party script:
