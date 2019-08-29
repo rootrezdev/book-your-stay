@@ -2,27 +2,7 @@
 
 Stay date and guest selection widget for publishers and affiliates to setup on their website. Adjust the settings in the sample below and provide the HTML/JavaScript snippet to the client. [Click here](https://assets.rootrez.com/book-your-stay/) to view the demo.
 
-## Reference
-[Building an embeddable Javascript widget](https://thomassileo.name/blog/2014/03/27/building-an-embeddable-javascript-widget-third-party-javascript/)
-
-Build file to share in third party script:
-
-```text
-widget.min.js
-```
-
-Files to do any change in widget html or css are the follows:
-```text
-template/form.html
-style/widget.css
-```
-
-After any changes in these files, do the build again for creating the widget.min.js file: 
-```bash
-node_modules/requirejs/bin/r.js -o embed.build.js
-```
-
-## Third party widget loading script sample
+## Sample
 
 You can refer to index.html on your localhost or the demo site [https://assets.rootrez.com/book-your-stay/](https://assets.rootrez.com/book-your-stay/).
 
@@ -79,3 +59,23 @@ var submission_url = "https://lodging.bookwesteros.com/referral?code=rz-78th-ann
 | default_checkin      | Date the date picker will default to        |
 | min_checkin   | The minimum allowed check-in date        |
 | max_checkout   | The maximum allowed check-out date        |
+
+## Developer Info
+[Building an embeddable Javascript widget](https://thomassileo.name/blog/2014/03/27/building-an-embeddable-javascript-widget-third-party-javascript/)
+
+Build file to share in third party script:
+
+```text
+widget.min.js
+```
+
+Files to do any change in widget html or css are the follows:
+```text
+template/form.html
+style/widget.css
+```
+
+After any changes in these files, do the build again for creating the widget.min.js file: 
+```bash
+node_modules/requirejs/bin/r.js -o embed.build.js
+```
