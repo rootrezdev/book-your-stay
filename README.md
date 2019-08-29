@@ -1,6 +1,6 @@
 # Book Your Stay Widget
 
-This a widget publishers and affiliates can setup on their website. Adjust the settings in the sample below and provide the HTML/JavaScript snippet to the client.
+This a widget publishers and affiliates can setup on their website. Adjust the settings in the sample below and provide the HTML/JavaScript snippet to the client. [Click here](https://thomassileo.name/blog/2014/03/27/building-an-embeddable-javascript-widget-third-party-javascript/) to view the demo.
 
 ## Reference
 [Building an embeddable Javascript widget](https://thomassileo.name/blog/2014/03/27/building-an-embeddable-javascript-widget-third-party-javascript/)
