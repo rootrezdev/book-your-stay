@@ -1,13 +1,13 @@
 <div class="rootrez_widget_form_wrapper">
-    <form id="rootrez-widget-form" method="get" name="rootrez-widget-form" class="cleanslate">
+    <form id="rootrez-widget-form" method="post" name="rootrez-widget-form" class="cleanslate">
         <div class="search_dates">
             <span id="rootrez_daterangepicker">Check-in &rarr; Check-out</span>
-            <input type="hidden" name="Checkin" id="Checkin" value="" />
-            <input type="hidden" name="Checkout" id="Checkout" value="" />
+            <input type="hidden" name="in" id="Checkin" value="" />
+            <input type="hidden" name="out" id="Checkout" value="" />
         </div>
         <div class="search_occupancy">
             <div class="occupancy_adults">
-                <select name="adults" id="adults">
+                <select name="adults[]" id="adults">
                     <option value="">Adults</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -23,7 +23,7 @@
             </div>
 
             <div class="occupancy_children">
-                <select name="children" id="children">
+                <select name="children[]" id="children">
                     <option value="">Children</option>
                     <option value="0">0</option>
                     <option value="1">1</option>
