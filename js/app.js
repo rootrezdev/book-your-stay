@@ -30,6 +30,7 @@ define(['jquery', 'text!template/form.html',
             $form = $('#rootrez-widget-form');
             // call initialization methods
             initializeEvents(settings);
+            loadDiscountData();
         }
     };
 
@@ -52,7 +53,7 @@ define(['jquery', 'text!template/form.html',
             {
                 checkout_mm = '0' + checkout_mm;
             } 
-            var checkout_date  = checkout_yyyy + "-" + checkout_mm + "-" + checkout_dd;
+            var checkout_date  = checkout_mm + "-" + checkout_dd + "-" + checkout_yyyy;
             $('#Checkout').val(checkout_date);
             $('#rootrez_daterangepicker').text(settings.default_checkin + ' to ' + checkout_date);
         }
@@ -71,30 +72,26 @@ define(['jquery', 'text!template/form.html',
             {
                 mm = '0' + mm;
             } 
-            var today_date  = yyyy + "-" + mm + "-" + dd;
+            var today_date  = mm + "-" + dd + "-" + yyyy;
             settings.min_checkin = today_date;
         }
         
-        // here I have used the $form pointer to initialize the events on the form
-        $('#rootrez-widget-form #rootrez_daterangepicker').dateRangePicker({
-            startDate: settings.min_checkin,
-            endDate: settings.max_checkout,
-            minDays: 2,
-            maxDays: 28,
-            getValue: function()
-            {
-                if ($('#Checkin').val() && $('#Checkout').val() )
-                    return $('#Checkin').val() + ' to ' + $('#Checkout').val();
-                else
-                    return '';
+        
+        var dpSettings = {
+            "minDate": settings.min_checkin,
+            "maxDate": settings.max_checkout,
+            "dateLimit":{
+                "days": 28
             },
-            setValue: function(s,s1,s2)
-            {
-                $('#Checkin').val(s1);
-                $('#Checkout').val(s2);
-                this.innerHTML = s1 + ' to ' + s2;
-            }
-            
+            "applyClass": '',
+            "cancelClass": '',
+            "buttonClasses": ''
+        };
+
+        $('#rootrez-widget-form #rootrez_daterangepicker').daterangepicker(dpSettings, function(start, end){
+            $('#rootrez_daterangepicker').html(start.format('MMM D, YYYY') + ' &rarr; ' + end.format('MMM D, YYYY'));
+            $('#Checkin').val(start.format('MM/DD/YYYY'));
+            $('#Checkout').val(end.format('MM/DD/YYYY'));
         });
 
         if(settings.submission_url != "") {
@@ -102,6 +99,21 @@ define(['jquery', 'text!template/form.html',
         } else {
             $('#rootrez-widget-form button[type="submit"]').attr('disabled','disabled');
         }
+    }
+
+    function loadDiscountData() {
+        var url = 'http://alta.publisher.localhost/discounts/for_widget';
+        $.ajax({
+            url: url,
+            type: "GET",
+            crossDomain: true,
+            success: function (response) {
+                console.log(response);               
+            },
+            error: function (xhr, status) {
+                console.log(status);
+            }
+        });
     }
 
     return app;
