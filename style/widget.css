@@ -33,6 +33,20 @@
     min-height: 30px!important;
     background-color: transparent!important;
 }
+
+#rootrez-widget-form #PromoCode{
+  width: 100%!important;
+  min-height: 30px!important;
+  background-color: transparent!important;
+}
+
+#rootrez-widget-form .search_promo_code{
+  display: flex!important;
+  justify-content: space-between!important;
+  align-items: center!important;
+  margin-bottom: 15px!important;
+}
+
 #rootrez-widget-form .search-wrapper{
     text-align: center!important;
 }
