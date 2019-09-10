@@ -98,7 +98,7 @@ define(['jquery', 'text!template/form.html',
                 url:settings.api_url+"/publisher/v3.0/discounts/all.json",
                 data:{ checkin : start.format('MM/DD/YYYY'), checkout : end.format('MM/DD/YYYY'), key: settings.publisher_key },
                 success: function (response) {        
-                    buildDropdown(response,$('#PromoCode'),'Select promo code');
+                    buildDropdown(response,$('#PromoCode'),'Select Offer');
                 }
               });
         });
@@ -117,13 +117,18 @@ define(['jquery', 'text!template/form.html',
             // Add the empty option with the empty message
             dropdown.append('<option value="">' + emptyMessage + '</option>');
             // Check result isnt empty
-            if("data" in result && result.data != '')
+            if("data" in result && result.data.length > 0)
             {
                 // Loop through each of the results and append the option to the dropdown
                 $.each(result.data, function(k, v) {
                     //console.log(v);
                     dropdown.append('<option value="' + v.code + '">' + v.display_string + ' - ' + v.code + '</option>');
                 });
+                $('#PromoCode').addClass('show');
+                $('#PromoCode').removeClass('hide');
+            } else {
+                $('#PromoCode').addClass('hide');
+                $('#PromoCode').removeClass('show');
             }
         }
 

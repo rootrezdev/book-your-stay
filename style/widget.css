@@ -47,6 +47,14 @@
   margin-bottom: 15px!important;
 }
 
+#rootrez-widget-form .search_promo_code #PromoCode.hide{
+  display: none!important;
+}
+
+#rootrez-widget-form .search_promo_code #PromoCode.show{
+  display: block!important;
+}
+
 #rootrez-widget-form .search-wrapper{
     text-align: center!important;
 }
