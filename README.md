@@ -77,5 +77,5 @@ style/widget.css
 
 After any changes in these files, do the build again for creating the widget.min.js file: 
 ```bash
-node_modules/requirejs/bin/r.js -o embed.build.js
+npm run build
 ```

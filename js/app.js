@@ -1,7 +1,7 @@
 define(['jquery', 'text!template/form.html', 
-                'text!style/widget.css', 
-                'text!style/cleanslate.css', 
-                'text!style/daterangepicker/picker.css'
+                'text!dist/style.css', 
+                //'text!style/cleanslate.css', 
+                //'text!style/daterangepicker/picker.css'
         ], function ($, formHtml, widgetcss, cleanslatecss, pickercss) {
     'use strict';
 
