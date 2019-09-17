@@ -1,4 +1,4 @@
-define(['jquery', 'text!template/form.html', 
+define(['jquery', 'text!resources/template/form.html', 
                 'text!dist/style.css', 
                 //'text!style/cleanslate.css', 
                 //'text!style/daterangepicker/picker.css'
