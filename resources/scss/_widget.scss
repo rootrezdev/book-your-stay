@@ -2,26 +2,25 @@
     max-width: 800px;
     background-color: #fff;
     border-radius: 3px;
-    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.125);
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.125);
     margin: 0 auto;
     overflow: hidden;
+    
 }
 
 #rootrez-widget-form {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    -webkit-box-align: center;
     align-items: center;
     width: 100%;
     margin-bottom: 0;
 
-
     .search {
-        
         &_dates {
             flex: 0 1 calc(40% - 1px);
-            border-right: 1px solid $border-color;
+            border-right: 1px solid #ececec;
             height: 60px;
             display: flex;
             flex-direction: column;
@@ -36,49 +35,61 @@
         }
 
         &_extras {
+            -webkit-box-flex: 0;
             flex: 0 1 40%;
+            display: -webkit-box;
             display: flex;
+            -webkit-box-pack: justify;
             justify-content: space-between;
+            -webkit-box-align: center;
             align-items: center;
 
             @include mq(phone-only) {
                 flex-basis: 100%;
             }
 
+
             select {
+                -webkit-appearance: none;
                 appearance: none;
                 outline: 0;
                 box-shadow: none;
                 border: 0 !important;
-                font-family: $font-family;
+                font-family: var(--book-font);
                 line-height: 3;
                 overflow: hidden;
                 font-size: 13px;
                 cursor: pointer;
+                background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+                background-position: 100% center;
+                background-repeat: no-repeat;
+                background-size: 9px;
+                padding-right: 20px;
+                margin-right: 20px;
             }
         }
+
         &_occupancy {
             width: 100%;
+            display: -webkit-box;
             display: flex;
+            -webkit-box-flex: 0;
             flex: 0 1 50%;
             padding: 0 10px;
             justify-content: space-around;
 
-            .occupancy_adults {
-                
-            }
+            .occupancy_adults {}
 
-            .occupancy_children {
-
-            }
-            
+            .occupancy_children {}
         }
 
         &_promo_code {
             flex: 0 1 50%;
 
             @include mq(phone-only) {
+                display: -webkit-box;
                 display: flex;
+                -webkit-box-pack: center;
                 justify-content: center;
             }
         }
@@ -89,6 +100,7 @@
             @include mq(phone-only) {
                 flex-basis: 100%;
             }
+
 
             button {
                 width: 100%;
@@ -101,6 +113,7 @@
                 height: 60px;
                 cursor: pointer;
                 font-size: 14px;
+                font-family: var(--book-font);
 
                 &:hover {
                     background-color: var(--secondary-color);
@@ -109,18 +122,13 @@
         }
     }
 
-
-
     span {
         padding: 18px 10px;
         border: none;
         margin: 0;
         cursor: pointer;
-        font-family: $font-family;
+        font-family: var(--book-font);
     }
 
-    #adults, #children, #PromoCode {
-        
-    }
-    
+    #adults, #children, #PromoCode {}
 }
