@@ -1,5 +1,29 @@
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
     <head>
+        <style>
+
+            :root {
+                --primary-color: orange;
+                --secondary-color: pink;
+                --book-font: 'proxima-nova';
+            }
+
+            #RootRezWidget{
+                font-family: var(--book-font);
+            }
+
+            @font-face {
+                font-family: 'proxima-nova';
+                src: url("https://assets.rootrez.com/rr-rangepicker/dist/fonts/proxima-nova/proximanova-regular-webfont.woff2") format("woff2"), url("https://assets.rootrez.com/rr-rangepicker/dist/fonts/proxima-nova/proximanova-regular-webfont.woff") format("woff");
+                font-weight: normal;
+                font-style: normal;
+            }
+
+                 
+
+
+        </style>
         <script>
         (function (window, document) {
             var loader = function () {
