@@ -70,9 +70,10 @@ widget.min.js
 ```
 
 Files to do any change in widget html or css are the follows:
-```text
-template/form.html
-style/widget.css
+
+HTML: template/form.html
+SCSS: resources/scss -> npm run styles
+
 ```
 
 After any changes in these files, do the build again for creating the widget.min.js file: 
