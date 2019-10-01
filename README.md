@@ -74,6 +74,8 @@ Files to do any change in widget html or css are the follows:
 HTML: template/form.html
 SCSS: resources/scss -> npm run styles
 
+Production: npm run prod
+
 ```
 
 After any changes in these files, do the build again for creating the widget.min.js file: 
