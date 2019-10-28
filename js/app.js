@@ -73,7 +73,23 @@ define(['jquery', 'text!resources/template/form.html',
             var today_date  = mm + "-" + dd + "-" + yyyy;
             settings.min_checkin = today_date;
         }
-        
+
+        if(settings.max_checkout == ""){
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth()+1;
+            if(dd < 10) 
+            {
+                dd = '0' + dd;
+            } 
+            if(mm < 10) 
+            {
+                mm = '0' + mm;
+            }
+            var yyyy = today.getFullYear()+2;
+            var today_date  = mm + "-" + dd + "-" + yyyy;
+            settings.max_checkout = today_date;
+        }        
         
         var dpSettings = {
             "minDate": settings.min_checkin,
