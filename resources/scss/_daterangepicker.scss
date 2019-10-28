@@ -20,6 +20,19 @@
     border-radius: 0 0 3px 3px;
     overflow: hidden;
 
+    @include mq(phone-only) {
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        margin-top: 0px;
+        transition: all 2.5s cubic-bezier(0, 1, 0.5, 1);
+
+        .calendar {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
     /* Calendars */
     &:before, &:after {
         position: absolute;
@@ -40,26 +53,6 @@
         border-right: 6px solid transparent;
         border-bottom: 6px solid #fff;
         border-left: 6px solid transparent;
-    }
-
-    &.opensleft {
-        &:before {
-            right: 9px;
-        }
-
-        &:after {
-            right: 10px;
-        }
-    }
-
-    &.openscenter {
-        &:before, &:after {
-            left: 0;
-            right: 0;
-            width: 0;
-            margin-left: auto;
-            margin-right: auto;
-        }
     }
 
     &.opensright {
@@ -95,20 +88,18 @@
         z-index: 3001;
     }
 
-    &.single {
-        .ranges, .calendar {
-            float: none;
-        }
-    }
-
     &.show-calendar .calendar {
         display: block;
     }
 
     .calendar {
         display: none;
-        max-width: 270px;
+        max-width: 320px;
         margin: 4px;
+
+        @include mq(phone-only) {
+            max-width: 100%;
+        }
 
         &.single .calendar-table {
             border: none;
@@ -132,7 +123,7 @@
                 background-position: 8px center;
                 background-size: 8px;
                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='icon-next' viewBox='0 0 19 32' width='100%25' height='100%25'%3E%3Ctitle%3Enext%3C/title%3E%3Cpath d='M0.667 32c-0.001 0-0.003 0-0.005 0-0.195 0-0.37-0.088-0.488-0.226l-0.001-0.001c-0.124-0.117-0.202-0.283-0.202-0.467s0.078-0.35 0.202-0.466l0-0 16.827-14.84-16.773-14.84c-0.124-0.117-0.202-0.283-0.202-0.467s0.078-0.35 0.202-0.466l0-0c0.119-0.127 0.289-0.206 0.476-0.206 0.153 0 0.294 0.053 0.405 0.141l-0.001-0.001 17.333 15.333c0.138 0.126 0.225 0.306 0.227 0.506v0c0 0.001 0 0.003 0 0.005 0 0.195-0.088 0.37-0.226 0.488l-0.001 0.001-17.333 15.333c-0.11 0.107-0.261 0.173-0.427 0.173-0.004 0-0.009-0-0.013-0h0.001z'%3E%3C/path%3E%3C/svg%3E");
-                }
+            }
         }
 
         td {
@@ -333,28 +324,6 @@
             width: 160px;
         }
 
-        &.single {
-            .ranges ul {
-                width: 100%;
-            }
-
-            .calendar.left {
-                clear: none;
-            }
-
-            &.ltr {
-                .ranges, .calendar {
-                    float: left;
-                }
-            }
-
-            &.rtl {
-                .ranges, .calendar {
-                    float: right;
-                }
-            }
-        }
-
         &.ltr {
             direction: ltr;
             text-align: left;
@@ -390,43 +359,6 @@
                 float: left;
             }
         }
-
-        &.rtl {
-            direction: rtl;
-            text-align: right;
-
-            .calendar {
-                &.left {
-                    clear: right;
-                    margin-left: 0;
-
-                    .calendar-table {
-                        border-left: none;
-                        border-top-left-radius: 0;
-                        border-bottom-left-radius: 0;
-                    }
-                }
-
-                &.right {
-                    margin-right: 0;
-
-                    .calendar-table {
-                        border-right: none;
-                        border-top-right-radius: 0;
-                        border-bottom-right-radius: 0;
-                    }
-                }
-            }
-
-            .left .daterangepicker_input, .calendar.left .calendar-table {
-                padding-left: 12px;
-            }
-
-            .ranges, .calendar {
-                text-align: right;
-                float: right;
-            }
-        }
     }
 }
 
@@ -440,9 +372,6 @@
             float: left;
         }
 
-        &.rtl .ranges {
-            float: right;
-        }
 
         .calendar.left {
             clear: none !important;
@@ -460,26 +389,14 @@
     }
 }
 
-/* line 662, _base/components/_daterangepicker.scss */
-
-@media (max-width: 599px) {
-    /* line 666, _base/components/_daterangepicker.scss */
-    .range_inputs {
-        display: -webkit-box;
-        display: -ms-flexbox;
+.range_inputs {
+    @include mq(phone-only) {
         display: flex;
     }
-}
 
-/* line 672, _base/components/_daterangepicker.scss */
-
-.range_inputs {
     a {
-        -ms-flex-preferred-size: 50%;
         flex-basis: 50%;
         text-align: center;
-        -webkit-box-flex: 0;
-        -ms-flex: 0 1 50%;
         flex: 0 1 50%;
         width: 50%;
         border-bottom: none;
@@ -489,14 +406,13 @@
         padding: 15px 0;
         text-transform: uppercase;
         cursor: pointer;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
         justify-content: center;
-        -ms-flex-line-pack: center;
         align-content: center;
+
+        @include mq(phone-only) {
+            padding: 25px 0;
+        }
     }
 
     .applyBtn {
@@ -512,39 +428,4 @@
         background-color: #ececec;
         float: left;
     }
-}
-
-@media (max-width: 599px) {
-    /* line 672, _base/components/_daterangepicker.scss */
-    .range_inputs a {
-        padding: 25px 0;
-    }
-}
-
-/* line 694, _base/components/_daterangepicker.scss */
-
-/* line 701, _base/components/_daterangepicker.scss */
-
-@media (max-width: 500px) {
-    /* line 709, _base/components/_daterangepicker.scss */
-    .daterangepicker {
-        width: 100%;
-        height: 100%;
-        padding: 0px;
-        margin-top: 0px;
-        position: fixed;
-        -webkit-transition-property: all;
-        transition-property: all;
-        -webkit-transition-duration: 2.5s;
-        transition-duration: 2.5s;
-        -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-
-        .calendar {
-            width: 100%;
-            max-width: 100%;
-        }
-    }
-
-    /* line 720, _base/components/_daterangepicker.scss */
 }

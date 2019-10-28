@@ -5,7 +5,7 @@
 @mixin mq($mq) {
   
   // https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862#.ucbl3zzee
-
+  
   @if $mq == phone-only             { @media (max-width: 599px)   { @content; } }
   @if $mq == tablet-portrait-up     { @media (min-width: 600px)   { @content; } }
   @if $mq == tablet-landscape-up    { @media (min-width: 900px)   { @content; } }

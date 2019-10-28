@@ -19,7 +19,7 @@
 
     .search {
         &_dates {
-            flex: 0 1 calc(40% - 1px);
+            flex: 1 1 calc(40% - 1px);
             border-right: 1px solid #ececec;
             height: 60px;
             display: flex;
@@ -36,7 +36,7 @@
 
         &_extras {
             -webkit-box-flex: 0;
-            flex: 0 1 40%;
+            flex: 1 1 40%;
             display: -webkit-box;
             display: flex;
             -webkit-box-pack: justify;
@@ -95,7 +95,7 @@
         }
 
         &-wrapper {
-            flex: 0 1 20%;
+            flex: 1 1 20%;
 
             @include mq(phone-only) {
                 flex-basis: 100%;
