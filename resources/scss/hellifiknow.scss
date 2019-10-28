@@ -1,0 +1,67 @@
+/*  Larger Screen Styling */
+@media (min-width: 564px) {
+    /* line 518, _base/components/_daterangepicker.scss */
+    .daterangepicker {
+        width: auto;
+
+        .ranges ul {
+            width: 160px;
+        }
+
+        &.ltr {
+            direction: ltr;
+            text-align: left;
+
+            .calendar {
+                &.left {
+                    clear: left;
+                    margin-right: 0;
+
+                    .calendar-table {
+                        border-right: none;
+                        border-top-right-radius: 0;
+                        border-bottom-right-radius: 0;
+                    }
+
+                    
+                }
+
+                &.right {
+                    margin-left: 0;
+
+                    .calendar-table {
+                        border-left: none;
+                        border-top-left-radius: 0;
+                        border-bottom-left-radius: 0;
+                    }
+                }
+            }
+
+            .left .daterangepicker_input, .calendar.left .calendar-table {
+                padding-right: 12px;
+            }
+
+            .ranges, .calendar {
+                float: left;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 730px) {
+    .daterangepicker {
+        .ranges {
+            width: auto;
+        }
+
+        &.ltr .ranges {
+            float: left;
+        }
+
+
+        .calendar.left {
+            clear: none !important;
+        }
+    }
+}
