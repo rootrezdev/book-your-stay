@@ -26,6 +26,8 @@
         padding: 0px;
         margin-top: 0px;
         transition: all 2.5s cubic-bezier(0, 1, 0.5, 1);
+        position: fixed;
+        top: 0 !important;
 
         .calendar {
             width: 100%;

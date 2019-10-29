@@ -171,6 +171,8 @@
     margin-top: 0px;
     -webkit-transition: all 2.5s cubic-bezier(0, 1, 0.5, 1);
     transition: all 2.5s cubic-bezier(0, 1, 0.5, 1);
+    position: fixed;
+    top: 0 !important;
   }
   .daterangepicker .calendar {
     width: 100%;
