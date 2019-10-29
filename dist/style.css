@@ -247,6 +247,7 @@
 @media (max-width: 599px) {
   .daterangepicker.show-calendar.ltr .calendar {
     max-width: 100% !important;
+    margin: 0 !important;
   }
 }
 
