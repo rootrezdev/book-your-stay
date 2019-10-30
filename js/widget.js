@@ -4,6 +4,7 @@ require(["jquery", "js/app", "moment", "daterangepicker"], function($, app, mome
         min_checkin : $('script[id="rootrezScript"]').data("min_checkin"),
         max_checkout : $('script[id="rootrezScript"]').data("max_checkout"),
         default_checkin : $('script[id="rootrezScript"]').data("default_checkin"),
+        default_checkout : $('script[id="rootrezScript"]').data("default_checkout"),
         submission_url : $('script[id="rootrezScript"]').data("submission_url"),
         publisher_key : $('script[id="rootrezScript"]').data("publisher_key"),
         api_url : $('script[id="rootrezScript"]').data("api_url"),

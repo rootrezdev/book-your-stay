@@ -24,15 +24,17 @@
         <script>
         (function (window, document) {
             var loader = function () {
-                var default_checkin = "";
-                var min_checkin = ""; //MM-DD-YYYY format
-                var max_checkout = "";
+                var default_checkin = ""; // MM/DD/YYYY format
+                var default_checkout = ""; // MM/DD/YYYY format
+                var min_checkin = ""; // MM/DD/YYYY format
+                var max_checkout = ""; // MM/DD/YYYY format
                 var submission_url = "https://lodging.bookwesteros.com";
 
                 var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];                 
                 s.id = "rootrezScript";
-                s.src = "widget.min.js";
+                s.src = "widget.min.js?v=3.2";
                 s.setAttribute("data-default_checkin", default_checkin);
+                s.setAttribute("data-default_checkout", default_checkout);
                 s.setAttribute("data-min_checkin",min_checkin);
                 s.setAttribute("data-max_checkout",max_checkout);
                 s.setAttribute("data-submission_url",submission_url);
@@ -45,6 +47,6 @@
         </script>
     </head>
     <body>            
-        <div id="RootRezWidget"></div>        
+        <div id="RootRezWidget"></div>    
     </body>
 </html>
