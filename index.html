@@ -32,14 +32,14 @@
 
                 var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];                 
                 s.id = "rootrezScript";
-                s.src = "widget.min.js?v=3.3";
+                s.src = "widget.min.js?v=3.4";
                 s.setAttribute("data-default_checkin", default_checkin);
                 s.setAttribute("data-default_checkout", default_checkout);
                 s.setAttribute("data-min_checkin",min_checkin);
                 s.setAttribute("data-max_checkout",max_checkout);
                 s.setAttribute("data-submission_url",submission_url);
-                s.setAttribute("data-publisher_key",'jCLTvj9LyAfkUv0yLQpGmcP6');
-                s.setAttribute("data-api_url",'http://rootrez.local');
+                /* s.setAttribute("data-publisher_key",'jCLTvj9LyAfkUv0yLQpGmcP6');
+                s.setAttribute("data-api_url",'http://rootrez.local'); */
                 t.parentNode.insertBefore(s, t);
             };
             window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);

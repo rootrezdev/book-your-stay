@@ -46,7 +46,7 @@
 
 #rootrez-widget-form .search_extras {
   -webkit-box-flex: 0;
-  flex: 1 1 40%;
+  flex: 1 1 10%;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
