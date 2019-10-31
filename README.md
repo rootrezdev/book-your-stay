@@ -15,9 +15,9 @@ You can refer to index.html on your localhost or the demo site [https://assets.r
             var submission_url = "https://lodging.bookwesteros.com";
             
             // required: 
-            var default_checkin = ""; // MM-DD-YYYY (e.g. 06-07-2020)
-            var min_checkin = ""; // MM-DD-YYYY (e.g. 06-01-2020)
-            var max_checkout = ""; // MM-DD-YYYY (e.g. 06-28-2020)
+            var default_checkin = ""; // MM/DD/YYYY (e.g. 06/07/2020)
+            var min_checkin = ""; // MM/DD/YYYY (e.g. 06/01/2020)
+            var max_checkout = ""; // MM/DD/YYYY (e.g. 06/28/2020)
             
             var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];                 
             s.id = "rootrezScript";
