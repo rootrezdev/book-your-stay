@@ -16,13 +16,16 @@ You can refer to index.html on your localhost or the demo site [https://assets.r
             
             // required: 
             var default_checkin = ""; // MM/DD/YYYY (e.g. 06/07/2020)
+            var default_checkout = ""; // MM/DD/YYYY (e.g. 06/15/2020)
             var min_checkin = ""; // MM/DD/YYYY (e.g. 06/01/2020)
             var max_checkout = ""; // MM/DD/YYYY (e.g. 06/28/2020)
+            var submission_url = "https://lodging.bookwesteros.com";
             
             var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];                 
             s.id = "rootrezScript";
             s.src = "https://assets.rootrez.com/book-your-stay/widget.min.js";
             s.setAttribute("data-default_checkin", default_checkin);
+            s.setAttribute("data-default_checkout", default_checkout);
             s.setAttribute("data-min_checkin",min_checkin);
             s.setAttribute("data-max_checkout",max_checkout);
             s.setAttribute("data-submission_url",submission_url);
@@ -56,7 +59,8 @@ var submission_url = "https://lodging.bookwesteros.com/referral?Code=rz-78th-ann
 | Variable      | Description |
 | ----------- | ----------- |
 | submission_url   | Required. The publishers URL to submit to        |
-| default_checkin      | Date the date picker will default to        |
+| default_checkin      | Checkin date the date picker will default to        |
+| default_checkout      | Checkout date the date picker will default to        |
 | min_checkin   | The minimum allowed check-in date        |
 | max_checkout   | The maximum allowed check-out date        |
 
