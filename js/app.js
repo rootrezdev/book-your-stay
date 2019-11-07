@@ -9,7 +9,7 @@ define(['jquery', 'text!resources/template/form.html',
 	
     var app = {
         init: function (config) {
-             // get the settings and make them available through the app
+            // get the settings and make them available through the app
             settings = config;
 
             var $widgetStyle = $("<style></style>", {type: "text/css"});
@@ -36,6 +36,13 @@ define(['jquery', 'text!resources/template/form.html',
     function initializeEvents(settings) {
         if(settings.default_checkin != "") {
             $('#Checkin').val(settings.default_checkin);
+        }
+
+        if(settings.default_checkout != "") {
+            $('#Checkout').val(settings.default_checkout);
+        }
+
+        if(settings.default_checkin != "" && settings.default_checkout == "") {
             var default_checkin = new Date(settings.default_checkin);
             var default_checkout = new Date(settings.default_checkin);
             default_checkout.setDate(default_checkin.getDate()+1);
@@ -51,9 +58,17 @@ define(['jquery', 'text!resources/template/form.html',
             {
                 checkout_mm = '0' + checkout_mm;
             } 
-            var checkout_date  = checkout_mm + "-" + checkout_dd + "-" + checkout_yyyy;
+            var checkout_date  = checkout_mm + "/" + checkout_dd + "/" + checkout_yyyy;
             $('#Checkout').val(checkout_date);
-            $('#rootrez_daterangepicker').text(settings.default_checkin + ' to ' + checkout_date);
+            settings.default_checkout = checkout_date;
+        }
+        
+        if(settings.default_checkin != "" && settings.default_checkout != "") {
+            var monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var defaultCheckin = new Date(settings.default_checkin);
+            var defaultCheckout = new Date(settings.default_checkout);
+            $('#rootrez_daterangepicker').html(monthArr[defaultCheckin.getMonth()] + ' ' + defaultCheckin.getDate() + ', ' + defaultCheckin.getFullYear() 
+                                        + ' &rarr; ' + monthArr[defaultCheckout.getMonth()] + ' ' + defaultCheckout.getDate() + ', ' + defaultCheckout.getFullYear() );
         }
 
         if(settings.min_checkin == ""){
@@ -70,7 +85,7 @@ define(['jquery', 'text!resources/template/form.html',
             {
                 mm = '0' + mm;
             } 
-            var today_date  = mm + "-" + dd + "-" + yyyy;
+            var today_date  = mm + "/" + dd + "/" + yyyy;
             settings.min_checkin = today_date;
         }
 
@@ -87,7 +102,7 @@ define(['jquery', 'text!resources/template/form.html',
                 mm = '0' + mm;
             }
             var yyyy = today.getFullYear()+2;
-            var today_date  = mm + "-" + dd + "-" + yyyy;
+            var today_date  = mm + "/" + dd + "/" + yyyy;
             settings.max_checkout = today_date;
         }        
         
