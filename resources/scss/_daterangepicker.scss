@@ -124,8 +124,18 @@
             border: none;
         }
 
-        &.right, &.left {
 
+        &.right {
+            float: right;
+
+            @include mq(phone-only) {
+                float: none !important;
+            }
+        }
+
+        &.left {
+            float: left;
+            
             @include mq(phone-only) {
                 float: none !important;
             }
