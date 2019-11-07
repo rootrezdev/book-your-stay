@@ -7,6 +7,26 @@ Stay date and guest selection widget for publishers and affiliates to setup on t
 You can refer to index.html on your localhost or the demo site [https://assets.rootrez.com/book-your-stay/](https://assets.rootrez.com/book-your-stay/).
 
 ```html
+<style>
+
+    :root {
+        --primary-color: orange;
+        --secondary-color: pink;
+        --book-font: 'proxima-nova';
+    }
+
+    #RootRezWidget{
+        font-family: var(--book-font);
+    }
+
+    @font-face {
+        font-family: 'proxima-nova';
+        src: url("https://assets.rootrez.com/rr-rangepicker/dist/fonts/proxima-nova/proximanova-regular-webfont.woff2") format("woff2"), url("https://assets.rootrez.com/rr-rangepicker/dist/fonts/proxima-nova/proximanova-regular-webfont.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+</style>
 <script>
     (function (window, document) {
         var loader = function () {
