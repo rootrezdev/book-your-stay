@@ -31,8 +31,8 @@ You can refer to index.html on your localhost or the demo site [https://assets.r
     (function (window, document) {
         var loader = function () {
 
-            // required: 
-            var submission_url = "https://lodging.bookwesteros.com";
+            // required (update with your lodging subdomain): 
+            var submission_url = "https://lodging.publisher-domain.com";
     
             // optional (these values can be left empty): 
             var default_checkin = ""; // MM/DD/YYYY (e.g. 06/07/2020)
