@@ -36,7 +36,7 @@ define(['jquery', 'text!resources/template/form.html',
     function initializeEvents(settings) {
         if (settings.title_text && settings.title_text.length) {
             $('#widget-title').text(settings.title_text);
-            $('#widget-title').show();
+            $('#widget-title-box').show();
         }
         if (settings.tagline_text && settings.tagline_text.length) {
             $('#widget-tagline').text(settings.tagline_text);
