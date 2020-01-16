@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link rel="stylesheet" href="css/solarized-dark.css">
     <script src="js/highlight.pack.js"></script>
+    <script src="js/moment.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
         <style>
@@ -50,10 +51,10 @@
                 var tagline_text = "Simply put, nobody knows Salt Lake better, has lower rates or a better selection of incredible hotels and lodging. Search & book with locals.";
                 // var title_text = "";
                 // var tagline_text = "";
-                var default_checkin = "01/28/2020"; // MM/DD/YYYY format
-                var default_checkout = "01/31/2020"; // MM/DD/YYYY format
-                var min_checkin = "11/30/2019"; // MM/DD/YYYY format
-                var max_checkout = "02/01/2020"; // MM/DD/YYYY format
+                var default_checkin = moment().add(14, 'days').format('MM/DD/YYYY'); // MM/DD/YYYY format
+                var default_checkout = moment().add(18, 'days').format('MM/DD/YYYY');
+                var min_checkin = moment().format('MM/DD/YYYY');
+                var max_checkout = moment().add(5, 'years').format('MM/DD/YYYY');
                 var submission_url = "https://lodging.bookwesteros.com";
 
                 var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];
@@ -102,6 +103,7 @@
                         </div>
                     </div>
                     <br>
+                    <h2 class="subtitle">The CSS</h2>
                     <pre><code class="css">
 # place in your page's head section
 &lt;style&gt;
@@ -129,7 +131,8 @@
     }
 &lt;/style&gt;
 </code></pre>
-<br>
+                    <br>
+                    <h2 class="subtitle">The Javascript</h2>
                     <pre><code class="javascript">
 
 # place inside your html body near the bottom
@@ -141,8 +144,10 @@
             var submission_url = "https://lodging.publisher-domain.com";
 
             // optional widget title. replace with empty strings to remove.
-            var title_text = "Book Your Stay Now!";
-            var tagline_text = "Add dates and guests and click Search";
+            var title_text = "Book Your Downtown Lodging Here";
+            var tagline_text = "Simply put, nobody knows Salt Lake better, ";
+            tagline_text += "has lower rates or a better selection of incredible ";
+            tagline_text += "hotels and lodging. Search & book with locals.";
 
             // optional (these values can be left empty):
             var default_checkin = ""; // MM/DD/YYYY (e.g. 06/07/2020)
@@ -168,6 +173,7 @@
 &lt;/script&gt;
                     </code></pre>
                     <br>
+                    <h2 class="subtitle">The HTML</h2>
                     <pre><code class="html">
 
 # place wherever you want the widget to appear
