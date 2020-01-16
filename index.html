@@ -67,8 +67,6 @@
                 s.setAttribute("data-submission_url",submission_url);
                 s.setAttribute("data-title_text",title_text);
                 s.setAttribute("data-tagline_text", tagline_text);
-                /* s.setAttribute("data-publisher_key",'jCLTvj9LyAfkUv0yLQpGmcP6');
-                s.setAttribute("data-api_url",'http://rootrez.local'); */
                 t.parentNode.insertBefore(s, t);
             };
             window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
@@ -91,11 +89,17 @@
                         <ol>
                             <li>Place the <code>&lt;style&gt;</code> section and place it in the <code>&lt;head&gt;</code> section of your page.
                             </li>
-                            <li>Modify the styling rules as needed. You may need to use <code>!important</code> to override some rules.</li>
+                            <li>Styles - modify the CSS styling rules as needed. You may need to use <code>!important</code> to override some rules.</li>
                             <li>Place the <code>&lt;script&gt;</code> section and place it in the <code>&lt;body&gt;</code> section of your page
                                 near the end of the file.</li>
-                            <li>Modify the <strong>title, tagline, checkin and checkout</strong> dates as needed.</li>
-                            <li>Modify the <code>submission_url</code> to point to your RootRez-hosted booking site.</li>
+                            <li>Dates - modify the <strong>default_checkin, default_checkout, min_checkin, and max_checkout</strong> as needed.
+                                They can be left blank to not set a default, but will default on the booking site to a checkin
+                                two weeks in the future, and a checkout four days after that.</li>
+                            <li>Text - modify the <strong>title, and tagline</strong> to suit your needs. The variables are required,
+                                but you can set to empty strings to remove the header text completely.</li>
+                            <li>URL - modify the <code>submission_url</code> to point to your RootRez-hosted booking site. Want to customize
+                                your submission url to default to an advanced search? Let us know and we can provide the custom links to get your
+                                customer the most appropriate search results.</li>
                             <li>Place the <code>&lt;div id="RootRezWidget"&gt;&lt;/div&gt;</code> container on your page wherever you want our
                                 widget to appear.</li>
                             <li>That's it! We'll handle the rest!</li>
@@ -110,11 +114,10 @@
     :root {
         --primary-color: orange;
         --secondary-color: pink;
-        --book-font: 'proxima-nova';
     }
 
     #RootRezWidget {
-        font-family: var(--book-font);
+        // should inherit your site's fonts, but can add here if needed.
     }
 
     // uncomment and modify to override title alignment, colors, fonts, etc.
@@ -168,7 +171,9 @@
             s.setAttribute("data-tagline_text", tagline_text);
             t.parentNode.insertBefore(s, t);
         };
-        window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+        window.addEventListener
+            ? window.addEventListener("load", loader, false)
+            : window.attachEvent("onload", loader);
     })(window, document);
 &lt;/script&gt;
                     </code></pre>
@@ -181,6 +186,8 @@
                     </code></pre>
                 </div>
 
+                <br>
+                <br>
                 <footer class="footer">
                     <div class="content has-text-centered">
                         <p>
