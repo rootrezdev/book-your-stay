@@ -54,7 +54,7 @@ You can refer to index.html on your localhost or the demo site [https://assets.r
 
             var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];
             s.id = "rootrezScript";
-            s.src = "https://assets.rootrez.com/book-your-stay/widget.min.js";
+            s.src = "https://assets.rootrez.com/book-your-stay/widget-2.min.js";
             s.setAttribute("data-default_checkin", default_checkin);
             s.setAttribute("data-default_checkout", default_checkout);
             s.setAttribute("data-min_checkin",min_checkin);
