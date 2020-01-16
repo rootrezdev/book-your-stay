@@ -1,3 +1,18 @@
+#widget-title-box {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    word-wrap: normal;
+}
+#widget-title {
+    padding: 0 10px;
+    margin: 5px;
+    text-align: center;
+}#widget-tagline {
+    padding: 0 10px;
+    margin: 5px;
+    text-align: center;
+}
 .rootrez_widget_form_wrapper {
     max-width: 800px;
     background-color: #fff;
@@ -5,7 +20,8 @@
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.125);
     margin: 0 auto;
     overflow: hidden;
-    
+    // border: 1px solid red;
+
 }
 
 #rootrez-widget-form {
