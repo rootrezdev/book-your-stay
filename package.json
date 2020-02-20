@@ -7,8 +7,8 @@
     "build": "node_modules/requirejs/bin/r.js -o embed.build.js",
     "scss": "node-sass resources/scss -o dist",
     "prefix": "postcss --use autoprefixer -b 'last 5 versions' dist/style.css -o dist/style.css",
-    "styles" : "npm run scss & npm run prefix",
-    "prod" : "npm run scss & npm run prefix & npm run build"
+    "styles": "npm run scss & npm run prefix",
+    "prod": "npm run scss & npm run prefix & npm run build"
   },
   "author": "",
   "license": "ISC",
