@@ -15,6 +15,7 @@ require(["jquery", "js/app", "moment", "daterangepicker"], function($, app, mome
         submission_url : $('script[id="rootrezScript"]').data("submission_url"),
         publisher_key : $('script[id="rootrezScript"]').data("publisher_key"),
         api_url : $('script[id="rootrezScript"]').data("api_url"),
+        value_add_code : 'FreeBrewPass',
      };
      $(function() {
         app.init(config);
