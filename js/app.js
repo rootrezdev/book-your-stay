@@ -158,7 +158,9 @@ define(['jquery', 'text!resources/template/form.html',
         
         $('#rootrez-widget-form').on('submit',function(e){
 		  e.preventDefault();
-		  window.location.href = settings.submission_url;
+		  var formData=$(this).serialize();
+		  var finalUrl = settings.submission_url+"&"+formData;
+		  window.location.href = finalUrl;
 		});
     }
 
