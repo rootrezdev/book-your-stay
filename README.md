@@ -1,5 +1,7 @@
 # Book Your Stay Widget
 
+COMPILATION: Navigate to this folder in windows command line and execute the following command: npm run prod
+
 Stay date and guest selection widget for publishers and affiliates to setup on their website. Adjust the settings in the sample below and provide the HTML/JavaScript snippet to the client. [Click here](https://assets.rootrez.com/book-your-stay/) to view the demo.
 
 ## Sample
