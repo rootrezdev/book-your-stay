@@ -124,8 +124,6 @@ define(['jquery', 'text!resources/template/form.html',
             "cancelClass": '',
             "buttonClasses": ''
         };
-        
-        var value_add_code = settings.value_add_code;
 
         $('#rootrez-widget-form #rootrez_daterangepicker').daterangepicker(dpSettings, function(start, end){
             $('#rootrez_daterangepicker').html(start.format('MMM D, YYYY') + ' &rarr; ' + end.format('MMM D, YYYY'));
@@ -144,11 +142,11 @@ define(['jquery', 'text!resources/template/form.html',
         });
 		
         if(settings.submission_url != "") {
-        	if(value_add_code != "") {
+        	if(settings.value_add_code != "" && settings.value_add_code != undefined) {
         		if(settings.submission_url.charAt( settings.submission_url.length-1 ) == "/") {
     				settings.submission_url = settings.submission_url.slice(0, -1);
 				}
-        		$("#rootrez-widget-form").attr('action', settings.submission_url + "?PromoCode="+value_add_code);
+        		$("#rootrez-widget-form").attr('action', settings.submission_url + "?PromoCode="+settings.value_add_code.toString());
         	} else {
             	$("#rootrez-widget-form").attr('action', settings.submission_url);
             }
