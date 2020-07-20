@@ -62,6 +62,7 @@
                 // var min_checkin = moment().format('MM/DD/YYYY');
                 // var max_checkout = moment().add(5, 'years').format('MM/DD/YYYY');
                 var submission_url = "https://lodging.bookwesteros.com";
+                var value_add_code = "FUNPACK";
 
                 var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];
                 s.id = "rootrezScript";
@@ -73,6 +74,7 @@
                 s.setAttribute("data-submission_url",submission_url);
                 s.setAttribute("data-title_text",title_text);
                 s.setAttribute("data-tagline_text", tagline_text);
+                s.setAttribute("value_add_code", value_add_code);
                 t.parentNode.insertBefore(s, t);
             };
             window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
