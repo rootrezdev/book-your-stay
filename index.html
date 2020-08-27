@@ -27,12 +27,12 @@
                 var default_checkin = "12/30/2019"; // MM/DD/YYYY format
                 var default_checkout = "01/01/2020"; // MM/DD/YYYY format
                 var min_checkin = "11/30/2019"; // MM/DD/YYYY format
-                var max_checkout = "02/01/2020"; // MM/DD/YYYY format
+                var max_checkout = "02/01/2099"; // MM/DD/YYYY format
                 var submission_url = "https://lodging.bookwesteros.com";
 
                 var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];                 
                 s.id = "rootrezScript";
-                s.src = "widget.min.js?v=3.4";
+                s.src = "widget.min.js";
                 s.setAttribute("data-default_checkin", default_checkin);
                 s.setAttribute("data-default_checkout", default_checkout);
                 s.setAttribute("data-min_checkin",min_checkin);
