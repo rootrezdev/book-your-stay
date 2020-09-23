@@ -5,244 +5,71 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The RootRez Booking Widget</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <link rel="stylesheet" href="css/solarized-dark.css">
-    <script src="js/highlight.pack.js"></script>
-    <script src="js/moment.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
 
-        <style>
-            .container {
-                max-width: 800px;
-            }
-            :root {
-                --primary-color: orange;
-                --secondary-color: pink;
-                --book-font: Ubuntu, 'proxima-nova';
-            }
+    <style>
+        .container {
+            max-width: 800px;
+        }
+        :root {
+            --primary-color: orange;
+            --secondary-color: pink;
+            --book-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            --border-radius: 200px;
+            --border-color: #ececec;
+            --form-border: 1px solid #ececec;
+            --box-shadow: none;
+        }
 
-            #RootRezWidget{
-                font-family: var(--book-font);
-                box-shadow: none !important;
-                border: 1px solid #ff5826;
-                border-radius: 3px;
-            }
+        #RootRezWidget{
+            font-family: var(--book-font);
+            box-shadow: none !important;
+        }
 
-            #widget-title {
-                font-size: 2em;
-                font-weight: bold;
-                text-align: left !important;
-            }
-            #widget-tagline {
-                font-size: 1.2em;
+        #widget-title {
+            font-size: 2em;
+            font-weight: bold;
+            text-align: left !important;
+        }
+        #widget-tagline {
+            font-size: 1.2em;
+            text-align: left !important;
+        }
 
-                text-align: left !important;
-            }
-
-            @font-face {
-                font-weight: normal;
-                font-style: normal;
-            }
-
-        </style>
-        <script>
-        (function (window, document) {
-            var loader = function () {
-                var title_text = "Book Your Downtown Lodging Here";
-                var tagline_text = "Simply put, nobody knows Salt Lake better, has lower rates or a better selection of incredible hotels and lodging. Search & book with locals.";
-                // var title_text = "";
-                // var tagline_text = "";
-                var default_checkin = "";
-                var default_checkout = "";
-                var min_checkin = "";
-                var max_checkout = "";
-
-                // var default_checkin = moment().add(14, 'days').format('MM/DD/YYYY'); // MM/DD/YYYY format
-                // var default_checkout = moment().add(18, 'days').format('MM/DD/YYYY');
-                // var min_checkin = moment().format('MM/DD/YYYY');
-                // var max_checkout = moment().add(5, 'years').format('MM/DD/YYYY');
-                var submission_url = "http://lodging.bookwesteros.com/search?PromoCode=FUNPACK";
-                var value_add_code = "FUNPACK";
-
-                var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];
-                s.id = "rootrezScript";
-                s.src = "widget-2.min.js?v=3.6";
-                s.setAttribute("data-default_checkin", default_checkin);
-                s.setAttribute("data-default_checkout", default_checkout);
-                s.setAttribute("data-min_checkin",min_checkin);
-                s.setAttribute("data-max_checkout",max_checkout);
-                s.setAttribute("data-submission_url",submission_url);
-                s.setAttribute("data-title_text",title_text);
-                s.setAttribute("data-tagline_text", tagline_text);
-                s.setAttribute("value_add_code", value_add_code);
-                t.parentNode.insertBefore(s, t);
-            };
-            window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
-        })(window, document);
-        </script></head>
-
-        <body>
-
-            <section class="section">
-                <div class="container">
-            <div class="columns">
-                <div class="column is-4"><svg height="80px" viewBox="0 0 244 225" width="auto" xmlns="http://www.w3.org/2000/svg">
-                        <title>rootrez-logo-vertical</title>
-                        <g data-name="Layer 2" id="1b23189e-07b5-4bbe-bb95-175fe1eadc6d">
-                            <g data-name="Layer 1" id="dc7bee37-6441-48e1-a2e9-9dd547db49f4">
-                                <path
-                                    d="M189.73,51.76C187.19,50.09,160.26,30.16,121,.91l-.18-.14a3.8,3.8,0,0,0-.65-.47,2.52,2.52,0,0,0-2-.16,2.57,2.57,0,0,0-.36.16,2,2,0,0,0-.46.31c-22.52,16.79-65.77,49-69,51.08A2.59,2.59,0,0,0,47,54v89.52A2.53,2.53,0,0,0,49.53,146h53.91a2.52,2.52,0,0,0,2.52-2.53l0-52.9,1-.55c4.27-2.42,9.67-3.65,16-3.65a44.85,44.85,0,0,1,10,1.07V82.39a44.38,44.38,0,0,0-32.43,5.41v53.14H52V55.26l.8-.57c6.5-4.62,27.76-20.37,65-48.16L119,5.69l1.14.84c38.08,28.39,58.74,43.69,65,48.16l.79.57v88.21a2.52,2.52,0,1,0,5,0V54a2.52,2.52,0,0,0-1.27-2.19"
-                                    style="fill:#ff5826;fill-rule:evenodd"></path>
-                                <path
-                                    d="M5.62,223H0V185.46A28.2,28.2,0,0,1,15.16,181a28.49,28.49,0,0,1,6.84.86v5.59a23.11,23.11,0,0,0-7.21-1,18.22,18.22,0,0,0-9.17,2.09Z"
-                                    style="fill:#ff5826;fill-rule:evenodd"></path>
-                                <path
-                                    d="M47,186c-8.82,0-15.15,6.75-15.15,17S38.18,220,47,220s15.15-6.75,15.15-17S55.82,186,47,186m0-5c12.46,0,21,9,21,22s-8.54,22-21,22-21-9-21-22,8.54-22,21-22"
-                                    style="fill:#ff5826;fill-rule:evenodd"></path>
-                                <path
-                                    d="M95,186c-8.82,0-15.15,6.75-15.15,17S86.18,220,95,220s15.15-6.75,15.15-17S103.82,186,95,186m0-5c12.46,0,21,9,21,22s-8.54,22-21,22-21-9-21-22,8.54-22,21-22"
-                                    style="fill:#ff5826;fill-rule:evenodd"></path>
-                                <path
-                                    d="M118,182.18h6.43V172h5.76v10.18H142v4.9h-11.8v25.54c0,5.37,2.11,7.48,6,7.48,2.69,0,4.9-.86,7.77-2.3v5.09a19.53,19.53,0,0,1-9,2.11c-6,0-10.56-3.17-10.56-11.81V187.08H118Z"
-                                    style="fill:#ff5826;fill-rule:evenodd"></path>
-                                <path
-                                    d="M153.72,223H152V185.4a21.94,21.94,0,0,1,13.3-4.4,23.5,23.5,0,0,1,4.7.48v1.81a24.94,24.94,0,0,0-4.7-.48,20.54,20.54,0,0,0-11.58,3.44Z"
-                                    style="fill:#ff5826;fill-rule:evenodd"></path>
-                                <path
-                                    d="M207.16,199.91c0-9.6-4.85-17.28-15.45-17.28-9.61,0-16.7,7.3-17.67,17.28Zm-33.31,1.53v.77c0,12.38,7.87,20.16,18.75,20.16a21.76,21.76,0,0,0,14.18-4.71v1.92c-3.69,3.08-9,4.42-14.18,4.42-11.65,0-20.59-8.16-20.59-21.79,0-12,8.35-21.21,19.71-21.21,11.66,0,17.29,8.25,17.29,18.91v1.53Z"
-                                    style="fill:#ff5826;fill-rule:evenodd"></path>
-                                <polygon
-                                    points="244 224 213 224 213 222.36 241.18 183.63 214.31 183.63 214.31 182 243.35 182 243.35 183.53 215.06 222.36 244 222.36 244 224"
-                                    style="fill:#ff5826;fill-rule:evenodd"></polygon>
-                            </g>
-                        </g>
-                    </svg>
-                </div>
-                <div class="column is-8">
-                    <h1 class="title">
-                        The RootRez Booking Widget
-                    </h1>
-                    <p class="subtitle"> Grab the CSS, HTML and Javascript below and modify as needed. </p>
-                </div>
-            </div>
-            <hr>
-            <div id="RootRezWidget"></div>
-            <hr>
-
-            <h3 class="is-size-3">To Add the Widget to Your Site</h3>
-            <br>
-                    <div class="columns">
-                        <div class="column is-10 is-offset-1">
-                        <ol>
-                            <li>Place the <code>&lt;style&gt;</code> section and place it in the <code>&lt;head&gt;</code> section of your page.
-                            </li>
-                            <li>Styles - modify the CSS styling rules as needed. You may need to use <code>!important</code> to override some rules.</li>
-                            <li>Place the <code>&lt;script&gt;</code> section and place it in the <code>&lt;body&gt;</code> section of your page
-                                near the end of the file.</li>
-                            <li>Dates - modify the <strong>default_checkin, default_checkout, min_checkin, and max_checkout</strong> as needed.
-                                They can be left blank to not set a default, but will default on the booking site to a checkin
-                                two weeks in the future, and a checkout four days after that.</li>
-                            <li>Text - modify the <strong>title, and tagline</strong> to suit your needs. The variables are required,
-                                but you can set to empty strings to remove the header text completely.</li>
-                            <li>URL - modify the <code>submission_url</code> to point to your RootRez-hosted booking site. Want to customize
-                                your submission url to default to an advanced search? Let us know and we can provide the custom links to get your
-                                customer the most appropriate search results.</li>
-                            <li>Place the <code>&lt;div id="RootRezWidget"&gt;&lt;/div&gt;</code> container on your page wherever you want our
-                                widget to appear.</li>
-                            <li>That's it! We'll handle the rest!</li>
-                        </ol>
-                        </div>
-                    </div>
-                    <br>
-                    <h2 class="subtitle">The CSS</h2>
-                    <pre><code class="css">
-# place in your page's head section
-&lt;style&gt;
-    :root {
-        --primary-color: orange;
-        --secondary-color: pink;
-    }
-
-    #RootRezWidget {
-        // should inherit your site's fonts, but can add here if needed.
-    }
-
-    // uncomment and modify to override title alignment, colors, fonts, etc.
-    /* #widget-title {
-        text-align: left !important;
-    }
-    #widget-tagline {
-        text-align: left !important;
-    } */
-
-    @font-face {
-        font-weight: normal;
-        font-style: normal;
-    }
-&lt;/style&gt;
-</code></pre>
-                    <br>
-                    <h2 class="subtitle">The Javascript</h2>
-                    <pre><code class="javascript">
-
-# place inside your html body near the bottom
-&lt;script&gt;
+    </style>
+    <script>
     (function (window, document) {
         var loader = function () {
+            var title_text = "";
+            var tagline_text = "";
+            var default_checkin = "";
+            var default_checkout = "";
+            var min_checkin = "";
+            var max_checkout = "";
+            var submission_url = "http://lodging.bookwesteros.com/search?PromoCode=FUNPACK";
+            var value_add_code = "FUNPACK";
 
-            // required (update with your lodging subdomain):
-            var submission_url = "https://lodging.publisher-domain.com";
-
-            // optional widget title. replace with empty strings to remove.
-            var title_text = "Book Your Downtown Lodging Here";
-            var tagline_text = "Simply put, nobody knows Salt Lake better, ";
-            tagline_text += "has lower rates or a better selection of incredible ";
-            tagline_text += "hotels and lodging. Search & book with locals.";
-
-            // optional (these values can be left empty):
-            var default_checkin = ""; // MM/DD/YYYY (e.g. 06/07/2020)
-            var default_checkout = ""; // MM/DD/YYYY (e.g. 06/15/2020)
-            var min_checkin = ""; // MM/DD/YYYY (e.g. 06/01/2020)
-            var max_checkout = ""; // MM/DD/YYYY (e.g. 06/28/2020)
-
-            var s = document.createElement("script");
-            var t = document.getElementsByTagName("script")[0];
+            var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];
             s.id = "rootrezScript";
-            s.src = "https://assets.rootrez.com/book-your-stay/widget-2.min.js";
+            s.src = "widget.min.js";
             s.setAttribute("data-default_checkin", default_checkin);
             s.setAttribute("data-default_checkout", default_checkout);
-            s.setAttribute("data-min_checkin", min_checkin);
-            s.setAttribute("data-max_checkout", max_checkout);
-            s.setAttribute("data-submission_url", submission_url);
-            s.setAttribute("data-title_text", title_text);
+            s.setAttribute("data-min_checkin",min_checkin);
+            s.setAttribute("data-max_checkout",max_checkout);
+            s.setAttribute("data-submission_url",submission_url);
+            s.setAttribute("data-title_text",title_text);
             s.setAttribute("data-tagline_text", tagline_text);
+            s.setAttribute("value_add_code", value_add_code);
             t.parentNode.insertBefore(s, t);
         };
-        window.addEventListener
-            ? window.addEventListener("load", loader, false)
-            : window.attachEvent("onload", loader);
+        window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
     })(window, document);
-&lt;/script&gt;
-                    </code></pre>
-                    <br>
-                    <h2 class="subtitle">The HTML</h2>
-                    <pre><code class="html">
+    </script>
+</head>
 
-# place wherever you want the widget to appear
-&lt;div id="RootRezWidget"&gt;&lt;/div&gt;
-                    </code></pre>
-                </div>
+<body>
+    
+    <div id="RootRezWidget"></div>
+   
+</body>
 
-                <br>
-                <br>
-                <footer class="footer">
-                    <div class="content has-text-centered">
-                        <p>
-                            <strong>RootRez Booking Widget</strong> by <a href="https://rootrez.com">Rootrez</a>.
-                        </p>
-                    </div>
-                </footer>
-            </section>
-        </body>
-
-        </html>
+</html>
