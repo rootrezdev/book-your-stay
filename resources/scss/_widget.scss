@@ -4,48 +4,65 @@
     padding: 10px;
     word-wrap: normal;
 }
+
 #widget-title {
     padding: 0 10px;
     margin: 5px;
     text-align: center;
-}#widget-tagline {
+}
+
+#widget-tagline {
     padding: 0 10px;
     margin: 5px;
     text-align: center;
 }
+
 .rootrez_widget_form_wrapper {
     max-width: 800px;
     background-color: #fff;
-    border-radius: 3px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.125);
+    border-radius: var(--border-radius);
+    border: var(--form-border);
+    box-shadow: var(--box-shadow);
     margin: 0 auto;
-    overflow: hidden;
-    // border: 1px solid red;
 
+    //overflow: hidden;
+    // border: 1px solid red;
 }
 
 #rootrez-widget-form {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    -webkit-box-align: center;
     align-items: center;
     width: 100%;
     margin-bottom: 0;
 
+    > div {
+        box-sizing: border-box;
+    }
+
     .search {
         &_dates {
-            flex: 1 1 calc(40% - 1px);
-            border-right: 1px solid #ececec;
+            flex: 1 1 35%;
+            border-right: 1px solid var(--border-color);
             height: 60px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 1rem;
+
+            svg {
+                fill: var(--primary-color);
+                width: 18px;
+                height: 18px;
+                margin-right: .5rem;
+            }
 
             @include mq(phone-only) {
                 flex-basis: 100%;
                 text-align: center;
-                border-bottom: 1px solid $border-color;
+                border-bottom: 1px solid var(--border-color);
                 border-right: none;
             }
         }
@@ -86,22 +103,15 @@
             }
         }
 
-        &_occupancy {
-            width: 100%;
-            display: -webkit-box;
-            display: flex;
-            -webkit-box-flex: 0;
-            flex: 0 1 50%;
-            padding: 0 10px;
-            justify-content: space-around;
-
-            .occupancy_adults {}
-
-            .occupancy_children {}
-        }
-
         &_promo_code {
-            flex: 0 1 50%;
+            flex: 0 1 25%;
+            border-right: 1px solid var(--border-color);
+            height: 60px;
+            padding: 1rem;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            position: relative;
 
             @include mq(phone-only) {
                 display: -webkit-box;
@@ -109,10 +119,56 @@
                 -webkit-box-pack: center;
                 justify-content: center;
             }
+
+
+            svg {
+                fill: var(--primary-color);
+                width: 20px;
+                height: 20px;
+                margin-right: .5rem;
+            }
         }
 
-        &-wrapper {
-            flex: 1 1 20%;
+        &_occupancy {
+            //display: flex;
+            flex: 0 1 25%;
+            padding: 1rem;
+            position: relative;
+
+            &-event {
+                display: flex;
+                justify-content: flex-start;
+            }
+
+            h3.guest-total {
+                font-size: 1rem;
+                font-weight: normal;
+                margin: 0;
+            }
+
+            svg {
+                fill: var(--primary-color);
+                width: 20px;
+                height: 20px;
+                margin-right: .5rem;
+
+                .counter_wrap & {
+                    margin: 0;
+                }
+            }
+
+            .counter_wrap {
+                svg {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &_submit {
+            flex: 0 1 15%;
+
+            //width: 20%;
+            border-radius: var(--border-radius);
 
             @include mq(phone-only) {
                 flex-basis: 100%;
@@ -131,6 +187,7 @@
                 cursor: pointer;
                 font-size: 14px;
                 font-family: var(--book-font);
+                border-radius: 0 var(--border-radius) var(--border-radius) 0;
 
                 &:hover {
                     background-color: var(--secondary-color);
@@ -140,12 +197,38 @@
     }
 
     span {
-        padding: 18px 10px;
-        border: none;
-        margin: 0;
-        cursor: pointer;
-        font-family: var(--book-font);
+        //padding: 18px 10px;
+        //border: none;
+        // margin: 0;
+        //cursor: pointer;
+        //font-family: var(--book-font);
+   
     }
 
-    #adults, #children, #PromoCode {}
+    .expander {
+        position: absolute;
+        right: 0;
+        background-color: transparent;
+
+        svg {
+            fill: black;
+            width: 10px;
+            height: 6px;
+            transition: transform .3s ease;
+        }
+
+        .open & {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+.search_occupancy.open {
+    .expander {
+        svg {
+           transform: rotate(180deg); 
+        }
+    }
 }
