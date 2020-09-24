@@ -147,6 +147,7 @@ define(['jquery', 'text!resources/template/form.html',
     				settings.submission_url = settings.submission_url.slice(0, -1);
 				}
         		$("#rootrez-widget-form").attr('action', settings.submission_url + "?PromoCode="+settings.value_add_code.toString());
+        		settings.submission_url = settings.submission_url + "?PromoCode="+settings.value_add_code.toString();
         	} else {
             	$("#rootrez-widget-form").attr('action', settings.submission_url);
             }
