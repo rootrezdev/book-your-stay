@@ -228,7 +228,7 @@ define([
             key: settings.publisher_key,
           },
           success: function (response) {
-            buildDropdown(response, $("#PromoCode"), "Select Offer");
+            buildDropdown(response, $("#deals-ul"), "Select Date to See Offers Available");
           },
         });
       }
@@ -273,20 +273,16 @@ define([
     // Remove current options
     dropdown.html("");
     // Add the empty option with the empty message
-    dropdown.append('<option value="">' + emptyMessage + "</option>");
+    dropdown.append('<li>' + emptyMessage + "</li>");
     // Check result isnt empty
     if ("data" in result && result.data.length > 0) {
       // Loop through each of the results and append the option to the dropdown
       $.each(result.data, function (k, v) {
         //console.log(v);
         dropdown.append(
-          '<option value="' +
-            v.code +
-            '">' +
+          '<li>' +
             v.display_string +
-            " - " +
-            v.code +
-            "</option>"
+            "</li>"
         );
       });
       $("#PromoCode").addClass("show");
