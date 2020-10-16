@@ -272,10 +272,12 @@ define([
     $("#rootrez-widget-form").on("submit", function (e) {
       e.preventDefault();
       var formData = $(this).serialize();
+      var numAdults = $("#adultnumber").val();
+      var numChildren = $("#childnumber").val();
       if(settings.value_add_code != "") {
-      	var finalUrl = settings.submission_url + "?PromoCode=" + settings.value_add_code + "&" + formData;
+      	var finalUrl = settings.submission_url + "?PromoCode=" + settings.value_add_code + "&" + formData + "&GuestsAdult=" + numAdults + "&GuestsChildren=" + numChildren;
       } else {
-      	var finalUrl = settings.submission_url + "?" + formData;
+      	var finalUrl = settings.submission_url + "?" + formData + "&GuestsAdult=" + numAdults + "&GuestsChildren=" + numChildren;
       }
       //console.log(finalUrl);
       window.location.href = finalUrl;
