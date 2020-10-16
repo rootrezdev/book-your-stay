@@ -45,8 +45,8 @@
             var default_checkout = "";
             var min_checkin = "";
             var max_checkout = "";
-            var submission_url = "http://lodging.bookwesteros.com/search?PromoCode=FUNPACK";
-            var value_add_code = "FUNPACK";
+            var submission_url = "http://lodging.bookwesteros.com/search";
+            var value_add_code = "FUNPACK"; //When using the value add dropdown, normally leave this blank. Adding a promocode here will make it a default code that is passed in when no others are selected.
 
             var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];
             s.id = "rootrezScript";
@@ -54,11 +54,13 @@
             s.setAttribute("data-default_checkin", default_checkin);
             s.setAttribute("data-default_checkout", default_checkout);
             s.setAttribute("data-min_checkin",min_checkin);
+            s.setAttribute("data-publisher_key","VSL-5bf023f6fab7f6a98877b8881eed24833f798632"); //Need the client's api key to get list of discounts from the api
             s.setAttribute("data-max_checkout",max_checkout);
             s.setAttribute("data-submission_url",submission_url);
             s.setAttribute("data-title_text",title_text);
             s.setAttribute("data-tagline_text", tagline_text);
-            s.setAttribute("value_add_code", value_add_code);
+            s.setAttribute("data-value_add_code", value_add_code);
+            s.setAttribute("data-api_url", "https://svc.rootrez.com"); //Need this to get list of discounts from api. Cannot access staging api unless hosted on assets.rootrez.com
             t.parentNode.insertBefore(s, t);
         };
         window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);

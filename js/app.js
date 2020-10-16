@@ -53,6 +53,14 @@ define([
       $(".search_promo_code .cancel").click(function () {
         $(".search_promo_code").toggleClass("open");
       });
+    
+    $("#dealApply").click(function(){
+    	$(".search_promo_code").toggleClass("open");
+    });
+    
+    $("#guestApply").click(function(){
+    	$(".search_occupancy").toggleClass("open");
+    });
 
       // Guest Counter
       var $apbutton = $(".adults .p-btn");
@@ -228,7 +236,7 @@ define([
             key: settings.publisher_key,
           },
           success: function (response) {
-            buildDropdown(response, $("#deals-ul"), "Select Date to See Offers Available");
+            buildDropdown(response, $("#deals-ul"), "No offers available for selected dates");
           },
         });
       }
@@ -264,26 +272,40 @@ define([
     $("#rootrez-widget-form").on("submit", function (e) {
       e.preventDefault();
       var formData = $(this).serialize();
-      var finalUrl = settings.submission_url + "&" + formData;
-      window.location.href = finalUrl;
+      if(settings.value_add_code != "") {
+      	var finalUrl = settings.submission_url + "?PromoCode=" + settings.value_add_code + "&" + formData;
+      } else {
+      	var finalUrl = settings.submission_url + "?" + formData;
+      }
+      console.log(finalUrl);
+      //window.location.href = finalUrl;
     });
   }
 
   function buildDropdown(result, dropdown, emptyMessage) {
-    // Remove current options
+    
     dropdown.html("");
     // Add the empty option with the empty message
-    dropdown.append('<li>' + emptyMessage + "</li>");
+    if (result.data.length == 0) {
+    	dropdown.append('<li>' + emptyMessage + "</li>");
+    }
     // Check result isnt empty
     if ("data" in result && result.data.length > 0) {
       // Loop through each of the results and append the option to the dropdown
       $.each(result.data, function (k, v) {
         //console.log(v);
         dropdown.append(
-          '<li>' +
+          '<div class="deal-select" offer_id="'+ v.code +'"><li>' +
             v.display_string +
-            "</li>"
+            "</li></div>"
         );
+      });
+      $(".deal-select").click(function(event){
+      	var selectedId = $(this).attr("offer_id");
+      	$(".deal-select").removeClass("selected");
+      	$(this).addClass("selected");
+      	console.log("Clicked discount id: "+selectedId);
+      	settings.value_add_code = selectedId;
       });
       $("#PromoCode").addClass("show");
       $("#PromoCode").removeClass("hide");
