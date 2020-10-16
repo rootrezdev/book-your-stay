@@ -277,8 +277,8 @@ define([
       } else {
       	var finalUrl = settings.submission_url + "?" + formData;
       }
-      console.log(finalUrl);
-      //window.location.href = finalUrl;
+      //console.log(finalUrl);
+      window.location.href = finalUrl;
     });
   }
 
@@ -304,7 +304,7 @@ define([
       	var selectedId = $(this).attr("offer_id");
       	$(".deal-select").removeClass("selected");
       	$(this).addClass("selected");
-      	console.log("Clicked discount id: "+selectedId);
+      	//console.log("Clicked discount id: "+selectedId);
       	settings.value_add_code = selectedId;
       });
       $("#PromoCode").addClass("show");
