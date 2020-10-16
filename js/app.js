@@ -287,7 +287,7 @@ define([
     dropdown.html("");
     // Add the empty option with the empty message
     if (result.data.length == 0) {
-    	dropdown.append('<li>' + emptyMessage + "</li>");
+    	dropdown.append('<li class="no-deals">' + emptyMessage + "</li>");
     }
     // Check result isnt empty
     if ("data" in result && result.data.length > 0) {
