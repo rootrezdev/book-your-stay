@@ -56,54 +56,59 @@ define([
     
     $("#dealApply").click(function(){
     	$(".search_promo_code").toggleClass("open");
+      $('.search_promo_code-event h3 span').text($('.deal-select.selected span').text());
     });
     
     $("#guestApply").click(function(){
     	$(".search_occupancy").toggleClass("open");
     });
 
-      // Guest Counter
-      var $apbutton = $(".adults .p-btn");
-      var $ambutton = $(".adults .m-btn");
-      var $acounter = $(".adults .counter");
+    // Guest Counter
+    var $apbutton = $(".adults .p-btn");
+    var $ambutton = $(".adults .m-btn");
+    var $acounter = $(".adults .counter");
 
-      var $cpbutton = $(".children .p-btn");
-      var $cmbutton = $(".children .m-btn");
-      var $ccounter = $(".children .counter");
+    var $cpbutton = $(".children .p-btn");
+    var $cmbutton = $(".children .m-btn");
+    var $ccounter = $(".children .counter");
 
-      function guestTotals() {
-        var tot = parseInt(+$acounter.val() + +$ccounter.val());
-        $(".guest-total span span").text(tot);
+    function guestTotals() {
+      var tot = parseInt(+$acounter.val() + +$ccounter.val());
+      $(".guest-total span span").text(tot);
+    }
+
+    $apbutton.click(function () {
+      if ($acounter.val() <= 9) {
+        $acounter.val(parseInt($acounter.val()) + 1);
+        guestTotals();
       }
+    });
 
-      $apbutton.click(function () {
-        if ($acounter.val() <= 9) {
-          $acounter.val(parseInt($acounter.val()) + 1);
-          guestTotals();
-        }
-      });
+    $ambutton.click(function () {
+      if ($acounter.val() >= 2) {
+        $acounter.val(parseInt($acounter.val()) - 1);
+        guestTotals();
+      }
+    });
 
-      $ambutton.click(function () {
-        if ($acounter.val() >= 2) {
-          $acounter.val(parseInt($acounter.val()) - 1);
-          guestTotals();
-        }
-      });
+    $cpbutton.click(function () {
+      if ($ccounter.val() <= 9) {
+        $ccounter.val(parseInt($ccounter.val()) + 1);
+        guestTotals();
+      }
+    });
 
-      $cpbutton.click(function () {
-        if ($ccounter.val() <= 9) {
-          $ccounter.val(parseInt($ccounter.val()) + 1);
-          guestTotals();
-        }
-      });
-
-      $cmbutton.click(function () {
-        if ($ccounter.val() >= 1) {
-          $ccounter.val(parseInt($ccounter.val()) - 1);
-          guestTotals();
-        }
-      });
-    },
+    $cmbutton.click(function () {
+      if ($ccounter.val() >= 1) {
+        $ccounter.val(parseInt($ccounter.val()) - 1);
+        guestTotals();
+      }
+    });
+    
+    // Deal text replace
+    
+    
+  },
   };
 
   // event initialization
@@ -297,9 +302,9 @@ define([
       $.each(result.data, function (k, v) {
         //console.log(v);
         dropdown.append(
-          '<div class="deal-select" offer_id="'+ v.code +'"><li>' +
+          '<li class="deal-select" offer_id="'+ v.code +'"><span>' +
             v.display_string +
-            "</li></div>"
+            "</span></li>"
         );
       });
       $(".deal-select").click(function(event){

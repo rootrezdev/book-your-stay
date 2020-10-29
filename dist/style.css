@@ -89,7 +89,13 @@
       font-weight: normal;
       margin: 0;
       display: flex;
-      align-items: center; }
+      align-items: center;
+      width: 92%; }
+      #rootrez-widget-form .search_promo_code h3 span {
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+        width: 100%; }
     #rootrez-widget-form .search_promo_code .deals-list ul {
       margin: 0 -8px;
       padding: 0;
@@ -99,7 +105,7 @@
         padding: 5px 8px;
         list-style: none;
         cursor: pointer; }
-        #rootrez-widget-form .search_promo_code .deals-list ul li:hover {
+        #rootrez-widget-form .search_promo_code .deals-list ul li:hover, #rootrez-widget-form .search_promo_code .deals-list ul li.selected {
           background: var(--primary-color);
           color: white; }
   #rootrez-widget-form .search_occupancy {
