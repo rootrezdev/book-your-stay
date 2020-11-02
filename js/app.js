@@ -105,7 +105,8 @@ define([
       }
     });
     
-    // Deal text replace
+    // hide discount section until discounts found
+    $("#PromoCode").hide();
     
     
   },
@@ -295,6 +296,9 @@ define([
     // Add the empty option with the empty message
     if (result.data.length == 0) {
     	dropdown.append('<li class="no-deals">' + emptyMessage + "</li>");
+    	$("#PromoCode").hide();
+    } else {
+    	$("#PromoCode").show();
     }
     // Check result isnt empty
     if ("data" in result && result.data.length > 0) {
@@ -314,11 +318,11 @@ define([
       	//console.log("Clicked discount id: "+selectedId);
       	settings.value_add_code = selectedId;
       });
-      $("#PromoCode").addClass("show");
-      $("#PromoCode").removeClass("hide");
+      //$("#PromoCode").addClass("show");
+      //$("#PromoCode").removeClass("hide");
     } else {
-      $("#PromoCode").addClass("hide");
-      $("#PromoCode").removeClass("show");
+      //$("#PromoCode").addClass("hide");
+      //$("#PromoCode").removeClass("show");
     }
   }
 
