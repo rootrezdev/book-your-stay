@@ -20,11 +20,14 @@
 .rootrez_widget_form_wrapper {
   max-width: 800px;
   background-color: #fff;
-  border-radius: var(--border-radius);
+  border-radius: 3px;
   border: var(--form-border);
   box-shadow: var(--box-shadow);
   margin: 0 auto;
 
+  @include mq(tablet-portrait-up) {
+    border-radius: var(--border-radius);
+  }
   //overflow: hidden;
   // border: 1px solid red;
 }
@@ -36,6 +39,26 @@
   align-items: center;
   width: 100%;
   margin-bottom: 0;
+  
+  // No deals scaffolding
+  &.no-deals {
+    .search_dates {
+      
+      @include mq(phone-only) {
+        flex: 0 1 60%;
+        border-right: 1px solid var(--border-color);
+        border-bottom: none;
+      }
+    }
+    
+    .search_occupancy {
+      
+      @include mq(phone-only) {
+        flex: 0 1 40%;
+        border-bottom: none;
+      }
+    }
+  }
 
   > div {
     box-sizing: border-box;
@@ -78,12 +101,14 @@
       align-items: center;
       position: relative;
       max-width: 25%;
+      
+      &.open {
+        z-index: 5;
+      }
 
       @include mq(phone-only) {
-        display: -webkit-box;
-        display: flex;
-        -webkit-box-pack: center;
-        justify-content: center;
+        flex-basis: 50%;
+        max-width: 50%;
       }
 
       &-event {
@@ -115,7 +140,7 @@
         display: flex;
         align-items: center;
         width: 92%;
-        
+
         span {
           white-space: nowrap;
           overflow: hidden;
@@ -136,7 +161,8 @@
             list-style: none;
             cursor: pointer;
 
-            &:hover, &.selected {
+            &:hover,
+            &.selected {
               background: var(--primary-color);
               color: white;
             }
@@ -154,6 +180,15 @@
       align-items: center;
       position: relative;
       max-width: 25%;
+      
+      @include mq(phone-only) {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+      
+      &.open {
+        z-index: 5;
+      }
 
       &-event {
         display: flex;
@@ -191,7 +226,7 @@
 
     &_submit {
       flex: 0 1 15%;
-
+      z-index: 1;
       //width: 20%;
       border-radius: var(--border-radius);
 
@@ -211,7 +246,11 @@
         cursor: pointer;
         font-size: 14px;
         font-family: var(--book-font);
-        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        border-radius: 0;
+
+        @include mq(tablet-portrait-up) {
+          border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
 
         &:hover {
           background-color: var(--secondary-color);
@@ -231,10 +270,12 @@
     padding: 8px;
     border: 1px solid var(--border-color);
     min-width: 140px;
+    z-index: 0;
 
     .open & {
       opacity: 1;
       top: 60px;
+      z-index: 2;
     }
   }
 

@@ -297,8 +297,12 @@ define([
     if (result.data.length == 0) {
     	dropdown.append('<li class="no-deals">' + emptyMessage + "</li>");
     	$("#PromoCode").hide();
+      $("#rootrez-widget-form").addClass("no-deals");
+      $("#rootrez-widget-form").removeClass("has-deals");
     } else {
     	$("#PromoCode").show();
+      $("#rootrez-widget-form").removeClass("no-deals");
+      $("#rootrez-widget-form").removeClass("has-deals");
     }
     // Check result isnt empty
     if ("data" in result && result.data.length > 0) {
