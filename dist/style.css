@@ -18,83 +18,152 @@
   max-width: 800px;
   background-color: #fff;
   border-radius: 3px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.125);
-  margin: 0 auto;
-  overflow: hidden; }
+  border: var(--form-border);
+  box-shadow: var(--box-shadow);
+  margin: 0 auto; }
+  @media (min-width: 600px) {
+    .rootrez_widget_form_wrapper {
+      border-radius: var(--border-radius); } }
 
 #rootrez-widget-form {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  -webkit-box-align: center;
   align-items: center;
   width: 100%;
   margin-bottom: 0; }
+  @media (max-width: 599px) {
+    #rootrez-widget-form.no-deals .search_dates {
+      flex: 0 1 60%;
+      border-right: 1px solid var(--border-color);
+      border-bottom: none; } }
+  @media (max-width: 599px) {
+    #rootrez-widget-form.no-deals .search_occupancy {
+      flex: 0 1 40%;
+      border-bottom: none; } }
+  #rootrez-widget-form > div {
+    box-sizing: border-box; }
   #rootrez-widget-form .search_dates {
-    flex: 1 1 calc(40% - 1px);
-    border-right: 1px solid #ececec;
+    flex: 1 1 35%;
+    border-right: 1px solid var(--border-color);
     height: 60px;
     display: flex;
-    flex-direction: column;
-    justify-content: center; }
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px;
+    font-size: 14px; }
+    #rootrez-widget-form .search_dates svg {
+      fill: var(--primary-color);
+      width: 18px;
+      height: 18px;
+      margin-right: 8px; }
     @media (max-width: 599px) {
       #rootrez-widget-form .search_dates {
         flex-basis: 100%;
         text-align: center;
-        border-bottom: 1px solid #ececec;
+        border-bottom: 1px solid var(--border-color);
         border-right: none; } }
-  #rootrez-widget-form .search_extras {
-    -webkit-box-flex: 0;
-    flex: 1 1 40%;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    align-items: center; }
-    @media (max-width: 599px) {
-      #rootrez-widget-form .search_extras {
-        flex-basis: 100%; } }
-    #rootrez-widget-form .search_extras select {
-      -webkit-appearance: none;
-      appearance: none;
-      outline: 0;
-      box-shadow: none;
-      border: 0 !important;
-      font-family: var(--book-font);
-      line-height: 3;
-      overflow: hidden;
-      font-size: 13px;
-      cursor: pointer;
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E");
-      background-position: 100% center;
-      background-repeat: no-repeat;
-      background-size: 9px;
-      padding-right: 20px;
-      margin-right: 20px;
-      background-color: white; }
-  #rootrez-widget-form .search_occupancy {
-    width: 100%;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-flex: 0;
-    flex: 0 1 50%;
-    padding: 0 10px;
-    justify-content: space-around; }
   #rootrez-widget-form .search_promo_code {
-    flex: 0 1 50%; }
+    flex: 0 1 25%;
+    border-right: 1px solid var(--border-color);
+    height: 60px;
+    padding: 16px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    position: relative;
+    max-width: 25%; }
+    #rootrez-widget-form .search_promo_code.open {
+      z-index: 5; }
     @media (max-width: 599px) {
       #rootrez-widget-form .search_promo_code {
-        display: -webkit-box;
-        display: flex;
-        -webkit-box-pack: center;
-        justify-content: center; } }
-  #rootrez-widget-form .search-wrapper {
-    flex: 1 1 20%; }
+        flex-basis: 50%;
+        max-width: 50%; } }
+    #rootrez-widget-form .search_promo_code-event {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 60px;
+      width: 100%; }
+    #rootrez-widget-form .search_promo_code svg {
+      fill: var(--primary-color);
+      width: 20px;
+      height: 20px;
+      margin-right: 8px; }
+    #rootrez-widget-form .search_promo_code select {
+      appearance: none;
+      -webkit-appearance: none;
+      max-width: 80%;
+      border: none; }
+    #rootrez-widget-form .search_promo_code h3 {
+      font-size: 14px;
+      font-weight: normal;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      width: 92%; }
+      #rootrez-widget-form .search_promo_code h3 span {
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+        width: 100%; }
+    #rootrez-widget-form .search_promo_code .deals-list ul {
+      margin: 0 -8px;
+      padding: 0;
+      list-style: none; }
+      #rootrez-widget-form .search_promo_code .deals-list ul li {
+        font-size: 12px;
+        padding: 5px 8px;
+        list-style: none;
+        cursor: pointer; }
+        #rootrez-widget-form .search_promo_code .deals-list ul li:hover, #rootrez-widget-form .search_promo_code .deals-list ul li.selected {
+          background: var(--primary-color);
+          color: white; }
+  #rootrez-widget-form .search_occupancy {
+    flex: 0 1 25%;
+    height: 60px;
+    padding: 16px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    position: relative;
+    max-width: 25%; }
     @media (max-width: 599px) {
-      #rootrez-widget-form .search-wrapper {
+      #rootrez-widget-form .search_occupancy {
+        flex-basis: 50%;
+        max-width: 50%; } }
+    #rootrez-widget-form .search_occupancy.open {
+      z-index: 5; }
+    #rootrez-widget-form .search_occupancy-event {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 60px;
+      width: 100%; }
+    #rootrez-widget-form .search_occupancy h3.guest-total {
+      font-size: 14px;
+      font-weight: normal;
+      margin: 0;
+      display: flex;
+      align-items: center; }
+    #rootrez-widget-form .search_occupancy svg {
+      fill: var(--primary-color);
+      width: 21px;
+      height: 20px;
+      margin-right: 8px; }
+      .counter_wrap #rootrez-widget-form .search_occupancy svg {
+        margin: 0; }
+    #rootrez-widget-form .search_occupancy .counter_wrap svg {
+      margin-right: 1px; }
+  #rootrez-widget-form .search_submit {
+    flex: 0 1 15%;
+    z-index: 1;
+    border-radius: var(--border-radius); }
+    @media (max-width: 599px) {
+      #rootrez-widget-form .search_submit {
         flex-basis: 100%; } }
-    #rootrez-widget-form .search-wrapper button {
+    #rootrez-widget-form .search_submit button {
       width: 100%;
       margin: 0;
       padding: 0;
@@ -105,15 +174,114 @@
       height: 60px;
       cursor: pointer;
       font-size: 14px;
-      font-family: var(--book-font); }
-      #rootrez-widget-form .search-wrapper button:hover {
+      font-family: var(--book-font);
+      border-radius: 0; }
+      @media (min-width: 600px) {
+        #rootrez-widget-form .search_submit button {
+          border-radius: 0 var(--border-radius) var(--border-radius) 0; } }
+      #rootrez-widget-form .search_submit button:hover {
         background-color: var(--secondary-color); }
-  #rootrez-widget-form span {
-    padding: 18px 10px;
-    border: none;
-    margin: 0;
-    cursor: pointer;
-    font-family: var(--book-font); }
+  #rootrez-widget-form .booking-extras-options {
+    position: absolute;
+    top: 70px;
+    left: -1px;
+    background: white;
+    width: calc(100% - 16px);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    min-width: 140px;
+    z-index: 0; }
+    .open #rootrez-widget-form .booking-extras-options {
+      opacity: 1;
+      top: 60px;
+      z-index: 2; }
+  #rootrez-widget-form .expander {
+    position: absolute;
+    right: 0;
+    background-color: transparent; }
+    #rootrez-widget-form .expander svg {
+      fill: black;
+      width: 10px;
+      height: 6px;
+      transition: transform 0.3s ease;
+      transform-origin: 5px 3px; }
+    .open #rootrez-widget-form .expander svg {
+      transform: rotate(-180deg); }
+  #rootrez-widget-form .search_occupancy.open .expander svg,
+  #rootrez-widget-form .search_promo_code.open .expander svg {
+    transform: rotate(180deg); }
+  #rootrez-widget-form .search_occupancy.open .booking-extras-options,
+  #rootrez-widget-form .search_promo_code.open .booking-extras-options {
+    opacity: 1;
+    top: 60px; }
+
+.booking-extras-actions {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: 20px 0 0; }
+  .booking-extras-actions a {
+    text-decoration: none;
+    font-size: 12px; }
+  .booking-extras-actions .cancel {
+    color: #aeaeae; }
+  .booking-extras-actions .apply {
+    background-color: var(--primary-color);
+    text-transform: uppercase;
+    padding: 3px 15px;
+    border-radius: var(--border-radius);
+    color: white;
+    font-weight: bolder;
+    transition: 0 0.3s ease-in-out; }
+    .booking-extras-actions .apply:hover {
+      background-color: var(--secondary-color); }
+
+.search_occupancy {
+  position: relative;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none; }
+  .search_occupancy-counter-item {
+    display: flex;
+    flex-flow: row nowrap; }
+    .search_occupancy-counter-item:first-child {
+      padding-bottom: 8px; }
+    .search_occupancy-counter-item label {
+      flex: 0 1 50%;
+      font-family: var(--book-font);
+      font-size: 12px;
+      user-select: none; }
+    .search_occupancy-counter-item input.counter {
+      width: 16px;
+      border: none;
+      font-family: var(--book-font);
+      text-align: center;
+      user-select: none; }
+  .search_occupancy .counter_wrap {
+    flex: 0 1 50%;
+    display: flex;
+    justify-content: flex-end;
+    user-select: none; }
+    .search_occupancy .counter_wrap svg {
+      cursor: pointer; }
+  .search_occupancy .guest-total span span {
+    display: inline-block; }
+    .search_occupancy .guest-total span span:before:not(:empty) {
+      content: "( "; }
+    .search_occupancy .guest-total span span:after:not(:empty) {
+      content: " )"; }
+  .search_occupancy svg.m-btn {
+    margin-right: 0; }
 
 /* line 124, _base/components/_daterangepicker.scss */
 .daterangepicker {

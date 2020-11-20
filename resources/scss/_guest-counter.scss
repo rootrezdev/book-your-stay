@@ -1,0 +1,81 @@
+
+
+.search_occupancy {
+	position: relative;
+	 -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+
+	&-counter {
+
+
+		&-item {
+			display: flex;
+			flex-flow: row nowrap;
+
+			&:first-child {
+				padding-bottom: 8px;
+			}
+
+			label {
+				flex: 0 1 50%;
+				font-family: var(--book-font);
+				font-size: 12px;
+				user-select: none;
+
+			}
+
+			input.counter {
+				width: 16px;
+				border: none;
+				font-family: var(--book-font);
+				text-align: center;
+				user-select: none;
+			}
+		}
+	}
+
+	&-event {
+		
+	}
+
+	.counter_wrap {
+		flex: 0 1 50%;
+		display: flex;
+		justify-content: flex-end;
+		user-select: none;
+
+		svg {
+			cursor: pointer;
+		}
+
+	}
+
+	.guest-total {
+
+		span {
+			span {
+				display: inline-block;
+				&:before {
+					&:not(:empty) {
+						content: "( ";
+					}
+				}
+
+				&:after {
+					&:not(:empty) {
+						content: " )";
+					}
+				}
+			}
+		}
+	}
+
+	svg.m-btn {
+		margin-right: 0;
+	}
+
+}
