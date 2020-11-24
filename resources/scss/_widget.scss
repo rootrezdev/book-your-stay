@@ -18,7 +18,7 @@
 }
 
 .rootrez_widget_form_wrapper {
-  max-width: 800px;
+  max-width: 520px;
   background-color: #fff;
   border-radius: 3px;
   border: var(--form-border);
@@ -28,8 +28,42 @@
   @include mq(tablet-portrait-up) {
     border-radius: var(--border-radius);
   }
-  //overflow: hidden;
-  // border: 1px solid red;
+
+  &.has-deals {
+    max-width: 800px;
+  }
+
+  // No deals scaffolding
+  &.no-deals {
+    #rootrez-widget-form {
+      .search_dates {
+        @include mq(phone-only) {
+          border-right: 1px solid var(--border-color);
+          //border-bottom: none;
+        }
+      }
+
+      .search_occupancy {
+        flex-basis: 30%;
+        max-width: 30%;
+        @include mq(phone-only) {
+          flex: 0 1 50%;
+          max-width: 50%;
+          border-bottom: none;
+        }
+      }
+
+      .search_submit {
+        flex-basis: 20%;
+
+        @include mq(phone-only) {
+          flex: 0 1 50%;
+          max-width: 50%;
+          //border-bottom: none;
+        }
+      }
+    }
+  }
 }
 
 #rootrez-widget-form {
@@ -39,26 +73,6 @@
   align-items: center;
   width: 100%;
   margin-bottom: 0;
-  
-  // No deals scaffolding
-  &.no-deals {
-    .search_dates {
-      
-      @include mq(phone-only) {
-        flex: 0 1 60%;
-        border-right: 1px solid var(--border-color);
-        border-bottom: none;
-      }
-    }
-    
-    .search_occupancy {
-      
-      @include mq(phone-only) {
-        flex: 0 1 40%;
-        border-bottom: none;
-      }
-    }
-  }
 
   > div {
     box-sizing: border-box;
@@ -96,12 +110,16 @@
       border-right: 1px solid var(--border-color);
       height: 60px;
       padding: 16px;
-      display: flex;
+      display: none;
       flex-flow: row nowrap;
       align-items: center;
       position: relative;
       max-width: 25%;
-      
+
+      .has-deals & {
+        display: flex;
+      }
+
       &.open {
         z-index: 5;
       }
@@ -180,12 +198,12 @@
       align-items: center;
       position: relative;
       max-width: 25%;
-      
+
       @include mq(phone-only) {
         flex-basis: 50%;
         max-width: 50%;
       }
-      
+
       &.open {
         z-index: 5;
       }

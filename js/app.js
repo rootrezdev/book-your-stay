@@ -55,12 +55,12 @@ define([
       });
     
     $("#dealApply").click(function(){
-    	$(".search_promo_code").toggleClass("open");
+      $(".search_promo_code").toggleClass("open");
       $('.search_promo_code-event h3 span').text($('.deal-select.selected span').text());
     });
     
     $("#guestApply").click(function(){
-    	$(".search_occupancy").toggleClass("open");
+      $(".search_occupancy").toggleClass("open");
     });
 
     // Guest Counter
@@ -106,7 +106,7 @@ define([
     });
     
     // hide discount section until discounts found
-    $("#PromoCode").hide();
+    //$("#PromoCode").hide();
     
     
   },
@@ -281,9 +281,9 @@ define([
       var numAdults = $("#adultnumber").val();
       var numChildren = $("#childnumber").val();
       if(settings.value_add_code != "") {
-      	var finalUrl = settings.submission_url + "?PromoCode=" + settings.value_add_code + "&" + formData + "&GuestsAdult=" + numAdults + "&GuestsChildren=" + numChildren;
+        var finalUrl = settings.submission_url + "?PromoCode=" + settings.value_add_code + "&" + formData + "&GuestsAdult=" + numAdults + "&GuestsChildren=" + numChildren;
       } else {
-      	var finalUrl = settings.submission_url + "?" + formData + "&GuestsAdult=" + numAdults + "&GuestsChildren=" + numChildren;
+        var finalUrl = settings.submission_url + "?" + formData + "&GuestsAdult=" + numAdults + "&GuestsChildren=" + numChildren;
       }
       //console.log(finalUrl);
       window.location.href = finalUrl;
@@ -295,14 +295,14 @@ define([
     dropdown.html("");
     // Add the empty option with the empty message
     if (result.data.length == 0) {
-    	dropdown.append('<li class="no-deals">' + emptyMessage + "</li>");
-    	$("#PromoCode").hide();
-      $("#rootrez-widget-form").addClass("no-deals");
-      $("#rootrez-widget-form").removeClass("has-deals");
+      dropdown.append('<li class="no-deals">' + emptyMessage + "</li>");
+      //$("#PromoCode").hide();
+      $(".rootrez_widget_form_wrapper").addClass("no-deals");
+      $(".rootrez_widget_form_wrapper").removeClass("has-deals");
     } else {
-    	$("#PromoCode").show();
-      $("#rootrez-widget-form").removeClass("no-deals");
-      $("#rootrez-widget-form").removeClass("has-deals");
+      //$("#PromoCode").show();
+      $(".rootrez_widget_form_wrapper").removeClass("no-deals");
+      $(".rootrez_widget_form_wrapper").addClass("has-deals");
     }
     // Check result isnt empty
     if ("data" in result && result.data.length > 0) {
@@ -316,11 +316,11 @@ define([
         );
       });
       $(".deal-select").click(function(event){
-      	var selectedId = $(this).attr("offer_id");
-      	$(".deal-select").removeClass("selected");
-      	$(this).addClass("selected");
-      	//console.log("Clicked discount id: "+selectedId);
-      	settings.value_add_code = selectedId;
+        var selectedId = $(this).attr("offer_id");
+        $(".deal-select").removeClass("selected");
+        $(this).addClass("selected");
+        //console.log("Clicked discount id: "+selectedId);
+        settings.value_add_code = selectedId;
       });
       //$("#PromoCode").addClass("show");
       //$("#PromoCode").removeClass("hide");
