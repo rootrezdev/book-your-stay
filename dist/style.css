@@ -137,7 +137,7 @@
           color: white; }
           #rootrez-widget-form .search_promo_code .deals-list ul li:hover svg, #rootrez-widget-form .search_promo_code .deals-list ul li.selected svg {
             fill: white; }
-        #rootrez-widget-form .search_promo_code .deals-list ul li span {
+        #rootrez-widget-form .search_promo_code .deals-list ul li span.tip {
           margin-right: 4px;
           width: 15px; }
         #rootrez-widget-form .search_promo_code .deals-list ul li svg {
