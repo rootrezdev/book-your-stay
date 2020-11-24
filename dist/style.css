@@ -127,11 +127,22 @@
       #rootrez-widget-form .search_promo_code .deals-list ul li {
         font-size: 12px;
         padding: 5px 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         list-style: none;
         cursor: pointer; }
         #rootrez-widget-form .search_promo_code .deals-list ul li:hover, #rootrez-widget-form .search_promo_code .deals-list ul li.selected {
           background: var(--primary-color);
           color: white; }
+          #rootrez-widget-form .search_promo_code .deals-list ul li:hover svg, #rootrez-widget-form .search_promo_code .deals-list ul li.selected svg {
+            fill: white; }
+        #rootrez-widget-form .search_promo_code .deals-list ul li span {
+          margin-right: 4px;
+          width: 15px; }
+        #rootrez-widget-form .search_promo_code .deals-list ul li svg {
+          width: 12px;
+          height: 12px; }
   #rootrez-widget-form .search_occupancy {
     flex: 0 1 25%;
     height: 60px;
