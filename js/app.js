@@ -55,12 +55,12 @@ define([
       });
     
     $("#dealApply").click(function(){
-    	$(".search_promo_code").toggleClass("open");
+      $(".search_promo_code").toggleClass("open");
       $('.search_promo_code-event h3 span').text($('.deal-select.selected span').text());
     });
     
     $("#guestApply").click(function(){
-    	$(".search_occupancy").toggleClass("open");
+      $(".search_occupancy").toggleClass("open");
     });
 
     // Guest Counter
@@ -106,7 +106,7 @@ define([
     });
     
     // hide discount section until discounts found
-    $("#PromoCode").hide();
+    //$("#PromoCode").hide();
     
     
   },
@@ -281,9 +281,9 @@ define([
       var numAdults = $("#adultnumber").val();
       var numChildren = $("#childnumber").val();
       if(settings.value_add_code != "") {
-      	var finalUrl = settings.submission_url + "?PromoCode=" + settings.value_add_code + "&" + formData + "&GuestsAdult=" + numAdults + "&GuestsChildren=" + numChildren;
+        var finalUrl = settings.submission_url + "?PromoCode=" + settings.value_add_code + "&" + formData + "&GuestsAdult=" + numAdults + "&GuestsChildren=" + numChildren;
       } else {
-      	var finalUrl = settings.submission_url + "?" + formData + "&GuestsAdult=" + numAdults + "&GuestsChildren=" + numChildren;
+        var finalUrl = settings.submission_url + "?" + formData + "&GuestsAdult=" + numAdults + "&GuestsChildren=" + numChildren;
       }
       //console.log(finalUrl);
       window.location.href = finalUrl;
@@ -295,14 +295,14 @@ define([
     dropdown.html("");
     // Add the empty option with the empty message
     if (result.data.length == 0) {
-    	dropdown.append('<li class="no-deals">' + emptyMessage + "</li>");
-    	$("#PromoCode").hide();
-      $("#rootrez-widget-form").addClass("no-deals");
-      $("#rootrez-widget-form").removeClass("has-deals");
+      dropdown.append('<li class="no-deals">' + emptyMessage + "</li>");
+      //$("#PromoCode").hide();
+      $(".rootrez_widget_form_wrapper").addClass("no-deals");
+      $(".rootrez_widget_form_wrapper").removeClass("has-deals");
     } else {
-    	$("#PromoCode").show();
-      $("#rootrez-widget-form").removeClass("no-deals");
-      $("#rootrez-widget-form").removeClass("has-deals");
+      //$("#PromoCode").show();
+      $(".rootrez_widget_form_wrapper").removeClass("no-deals");
+      $(".rootrez_widget_form_wrapper").addClass("has-deals");
     }
     // Check result isnt empty
     if ("data" in result && result.data.length > 0) {
@@ -310,17 +310,15 @@ define([
       $.each(result.data, function (k, v) {
         //console.log(v);
         dropdown.append(
-          '<li class="deal-select" offer_id="'+ v.code +'"><span>' +
-            v.display_string +
-            "</span></li>"
+          '<li class="deal-select" offer_id="'+ v.code +'"><span>' + v.display_string + '</span><span class="tip" tooltip="' + v.display_string +'"> <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M5.99999974,-1.133e-05 L5.99999974,-1.133e-05 C2.68628974,-1.133e-05 -2.6e-07,2.68629 -2.6e-07,6 C-2.6e-07,9.31371 2.68628974,12 5.99999974,12 C9.31370974,12 11.9999997,9.31371 11.9999997,6 L11.9999997,5.99993867 C11.9963833,2.68771367 9.31215968,0.00353867 5.99994967,-1.133e-05 L5.99999974,-1.133e-05 Z M6.125,2.5 L6.12499996,2.5 C6.53921346,2.5 6.87499996,2.8357865 6.87499996,3.25 C6.87499996,3.6642135 6.53921346,4 6.12499996,4 C5.71078646,4 5.37499996,3.6642135 5.37499996,3.25 L5.37499996,3.25000008 C5.37499996,2.83578658 5.71078646,2.5 6.12499996,2.5 L6.125,2.5 L6.125,2.5 Z M7.24999995,9.25 L5.24999995,9.25 L5.24999995,9.25 C4.97385748,9.25 4.74999995,9.0261425 4.74999995,8.75 C4.74999995,8.4738575 4.97385748,8.25 5.24999995,8.25 L5.62499998,8.25 L5.62499997,8.25 C5.69403547,8.25 5.74999995,8.1940355 5.74999995,8.125 L5.74999995,5.875 C5.74999995,5.8059645 5.69403547,5.75 5.62499997,5.75 L5.24999995,5.75 L5.24999995,5.75 C4.97385746,5.75 4.74999995,5.5261425 4.74999995,5.25 C4.74999995,4.9738575 4.97385746,4.75 5.24999995,4.75 L5.74999995,4.75 L5.74999995,4.75 C6.30228491,4.75 6.74999995,5.197715 6.74999995,5.75 L6.74999995,8.125 L6.74999995,8.12500002 C6.74999995,8.19403552 6.80596441,8.25 6.87499991,8.25 L7.24999995,8.25 L7.24999995,8.25 C7.52614239,8.25 7.74999995,8.47385752 7.74999995,8.75 C7.74999995,9.02614252 7.52614239,9.25 7.24999995,9.25 L7.24999995,9.25 Z"/></svg><span></li>'
         );
       });
       $(".deal-select").click(function(event){
-      	var selectedId = $(this).attr("offer_id");
-      	$(".deal-select").removeClass("selected");
-      	$(this).addClass("selected");
-      	//console.log("Clicked discount id: "+selectedId);
-      	settings.value_add_code = selectedId;
+        var selectedId = $(this).attr("offer_id");
+        $(".deal-select").removeClass("selected");
+        $(this).addClass("selected");
+        //console.log("Clicked discount id: "+selectedId);
+        settings.value_add_code = selectedId;
       });
       //$("#PromoCode").addClass("show");
       //$("#PromoCode").removeClass("hide");
