@@ -1,7 +1,7 @@
 require(["jquery", "js/app", "moment", "daterangepicker"], function($, app, moment, daterangepicker){
     'use strict';
 
-
+    moment.lang('fr');
     var default_checkin = $('script[id="rootrezScript"]').data("default_checkin") == undefined ? '' : $('script[id="rootrezScript"]').data("default_checkin");
     var default_checkout = $('script[id="rootrezScript"]').data("default_checkout") == undefined ? '' : $('script[id="rootrezScript"]').data("default_checkout");
 

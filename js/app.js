@@ -151,18 +151,18 @@ define([
 
     if (settings.default_checkin != "" && settings.default_checkout != "") {
       var monthArr = [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
+        "janv",
+        "févr",
+        "mars",
+        "avril",
+        "mai",
+        "juin",
+        "juil",
+        "août",
+        "sept",
+        "oct",
+        "nov",
+        "déc",
       ];
       var defaultCheckin = new Date(settings.default_checkin);
       var defaultCheckout = new Date(settings.default_checkout);
@@ -221,6 +221,33 @@ define([
       applyClass: "",
       cancelClass: "",
       buttonClasses: "",
+      locale: {
+        "applyLabel": "Appliquer",
+        "cancelLabel": "Annuler",
+        "daysOfWeek": [
+          "di",
+          "lu",
+          "ma",
+          "me",
+          "je",
+          "ve",
+          "sa"
+        ],
+        "monthNames": [
+          "janv",
+          "févr",
+          "mars",
+          "avril",
+          "mai",
+          "juin",
+          "juil",
+          "août",
+          "sept",
+          "oct",
+          "nov",
+          "déc",
+        ],
+      }
     };
 
     $("#rootrez-widget-form #rootrez_daterangepicker").daterangepicker(
