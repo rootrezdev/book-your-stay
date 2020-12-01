@@ -24,6 +24,7 @@
   border: var(--form-border);
   box-shadow: var(--box-shadow);
   margin: 0 auto;
+  color: var(--book-color);
 
   @include mq(tablet-portrait-up) {
     border-radius: var(--border-radius);
