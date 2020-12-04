@@ -14,6 +14,7 @@
 
 		&-item {
 			display: flex;
+			align-items: center;
 			flex-flow: row nowrap;
 
 			&:first-child {
@@ -34,6 +35,8 @@
 				font-family: var(--book-font);
 				text-align: center;
 				user-select: none;
+				color: var(--book-color);
+				padding: 5px;
 			}
 		}
 	}
@@ -46,6 +49,7 @@
 		flex: 0 1 50%;
 		display: flex;
 		justify-content: flex-end;
+		align-items: center;
 		user-select: none;
 
 		svg {

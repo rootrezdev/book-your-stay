@@ -20,7 +20,8 @@
   border-radius: 3px;
   border: var(--form-border);
   box-shadow: var(--box-shadow);
-  margin: 0 auto; }
+  margin: 0 auto;
+  color: var(--book-color); }
   @media (min-width: 600px) {
     .rootrez_widget_form_wrapper {
       border-radius: var(--border-radius); } }
@@ -276,6 +277,7 @@
   user-select: none; }
   .search_occupancy-counter-item {
     display: flex;
+    align-items: center;
     flex-flow: row nowrap; }
     .search_occupancy-counter-item:first-child {
       padding-bottom: 8px; }
@@ -289,11 +291,14 @@
       border: none;
       font-family: var(--book-font);
       text-align: center;
-      user-select: none; }
+      user-select: none;
+      color: var(--book-color);
+      padding: 5px; }
   .search_occupancy .counter_wrap {
     flex: 0 1 50%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     user-select: none; }
     .search_occupancy .counter_wrap svg {
       cursor: pointer; }
@@ -408,14 +413,18 @@
       min-width: 32px; }
       .daterangepicker .calendar th.prev {
         background-repeat: no-repeat;
-        background-position: 8px center;
+        background-position: 35% 8px;
         background-size: 8px;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='99' height='169' viewBox='0 0 99 169'%3E%3Cpath d='M3.77368421,168.421053 C3.76842105,168.421053 3.75789474,168.421053 3.74736842,168.421053 C2.72105263,168.421053 1.8,167.957895 1.17894737,167.231579 L1.17368421,167.226316 C0.521052632,166.610526 0.110526316,165.736842 0.110526316,164.768421 C0.110526316,163.8 0.521052632,162.926316 1.17368421,162.315789 L1.17368421,162.315789 L89.7368421,84.2105263 L1.45789474,6.10526316 C0.805263158,5.48947368 0.394736842,4.61578947 0.394736842,3.64736842 C0.394736842,2.67894737 0.805263158,1.80526316 1.45789474,1.19473684 L1.45789474,1.19473684 C2.08421053,0.526315789 2.97894737,0.110526316 3.96315789,0.110526316 C4.76842105,0.110526316 5.51052632,0.389473684 6.09473684,0.852631579 L6.08947368,0.847368421 L97.3157895,81.5473684 C98.0421053,82.2105263 98.5,83.1578947 98.5105263,84.2105263 L98.5105263,84.2105263 C98.5105263,84.2157895 98.5105263,84.2263158 98.5105263,84.2368421 C98.5105263,85.2631579 98.0473684,86.1842105 97.3210526,86.8052632 L97.3157895,86.8105263 L6.08947368,167.510526 C5.51052632,168.073684 4.71578947,168.421053 3.84210526,168.421053 C3.82105263,168.421053 3.79473684,168.421053 3.77368421,168.421053 L3.77894737,168.421053 L3.77368421,168.421053 Z' transform='rotate(-180 49.368 84.5)'/%3E%3C/svg%3E%0A"); }
+        .daterangepicker .calendar th.prev svg {
+          display: none; }
       .daterangepicker .calendar th.next {
         background-repeat: no-repeat;
-        background-position: 8px center;
+        background-position: 60% 8px;
         background-size: 8px;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='icon-next' viewBox='0 0 19 32' width='100%25' height='100%25'%3E%3Ctitle%3Enext%3C/title%3E%3Cpath d='M0.667 32c-0.001 0-0.003 0-0.005 0-0.195 0-0.37-0.088-0.488-0.226l-0.001-0.001c-0.124-0.117-0.202-0.283-0.202-0.467s0.078-0.35 0.202-0.466l0-0 16.827-14.84-16.773-14.84c-0.124-0.117-0.202-0.283-0.202-0.467s0.078-0.35 0.202-0.466l0-0c0.119-0.127 0.289-0.206 0.476-0.206 0.153 0 0.294 0.053 0.405 0.141l-0.001-0.001 17.333 15.333c0.138 0.126 0.225 0.306 0.227 0.506v0c0 0.001 0 0.003 0 0.005 0 0.195-0.088 0.37-0.226 0.488l-0.001 0.001-17.333 15.333c-0.11 0.107-0.261 0.173-0.427 0.173-0.004 0-0.009-0-0.013-0h0.001z'%3E%3C/path%3E%3C/svg%3E"); }
+        .daterangepicker .calendar th.next svg {
+          display: none; }
     .daterangepicker .calendar td {
       white-space: nowrap;
       text-align: center;
@@ -610,7 +619,7 @@
 		Let the content set the size of the tooltips 
 		but this will also keep them from being obnoxious
 		*/
-  min-width: 12rem;
+  min-width: 19rem;
   max-width: 30rem;
   overflow: hidden;
   text-overflow: ellipsis;
