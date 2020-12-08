@@ -53,10 +53,10 @@
             var max_checkout = "";
             var submission_url = "http://lodging.visitsaltlake.rootrez.review/search";
             var value_add_code = ""; //When using the value add dropdown, normally leave this blank. Adding a promocode here will make it a default code that is passed in when no others are selected.
-                var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];
-                s.id = "rootrezScript";
-                s.src = "widget.min.js";
-		s.setAttribute("data-default_checkin", default_checkin);
+            var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];
+            s.id = "rootrezScript";
+            s.src = "widget.min.js";
+			s.setAttribute("data-default_checkin", default_checkin);
             s.setAttribute("data-default_checkout", default_checkout);
             s.setAttribute("data-min_checkin",min_checkin);
             s.setAttribute("data-publisher_key","VSL-5bf023f6fab7f6a98877b8881eed24833f798632"); //Need the client's api key to get list of discounts from the api
@@ -66,7 +66,7 @@
             s.setAttribute("data-tagline_text", tagline_text);
             s.setAttribute("data-value_add_code", value_add_code);
             s.setAttribute("data-api_url", "https://api-staging.rootrez.com");                
-		t.parentNode.insertBefore(s, t);
+			t.parentNode.insertBefore(s, t);
             };
             window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
         })(window, document);
@@ -138,6 +138,11 @@
                             <li>URL - modify the <code>submission_url</code> to point to your RootRez-hosted booking site. Want to customize
                                 your submission url to default to an advanced search? Let us know and we can provide the custom links to get your
                                 customer the most appropriate search results.</li>
+                            <li>API Key - modify the <code>data-publisher_key</code> to match your specific RootRez API key.</li>
+                            <li>Optional Configuration - Want to use a specific discount or value add code instead of showing a list to choose from?
+                            	Change the <code>value_add_code</code> to match the code you want to apply to every user. Leave this blank to show a
+                            	list of available value adds and discounts. Note: Value add list is displayed after selecting a stay date range, and
+                            	only shows those value adds which are valid in the chosen date range.</li>
                             <li>Place the <code>&lt;div id="RootRezWidget"&gt;&lt;/div&gt;</code> container on your page wherever you want our
                                 widget to appear.</li>
                             <li>That's it! We'll handle the rest!</li>
@@ -194,21 +199,22 @@
             var default_checkout = ""; // MM/DD/YYYY (e.g. 06/15/2020)
             var min_checkin = ""; // MM/DD/YYYY (e.g. 06/01/2020)
             var max_checkout = ""; // MM/DD/YYYY (e.g. 06/28/2020)
+            
+            var value_add_code = ""; //Leave blank. This is for optionally overriding available value-adds.
 
-            var s = document.createElement("script");
-            var t = document.getElementsByTagName("script")[0];
+            var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];
             s.id = "rootrezScript";
             s.src = "https://assets.rootrez.com/book-your-stay/widget.min.js";
-            s.setAttribute("data-default_checkin", default_checkin);
+			s.setAttribute("data-default_checkin", default_checkin);
             s.setAttribute("data-default_checkout", default_checkout);
-            s.setAttribute("data-min_checkin", min_checkin);
-            s.setAttribute("data-max_checkout", max_checkout);
-	    s.setAttribute("data-publisher_key","YOUR API KEY HERE");
-            s.setAttribute("data-submission_url", submission_url);
-            s.setAttribute("data-title_text", title_text);
+            s.setAttribute("data-min_checkin",min_checkin);
+	    	s.setAttribute("data-publisher_key","YOUR API KEY HERE");
+            s.setAttribute("data-max_checkout",max_checkout);
+            s.setAttribute("data-submission_url",submission_url);
+            s.setAttribute("data-title_text",title_text);
             s.setAttribute("data-tagline_text", tagline_text);
-	    s.setAttribute("data-value_add_code", value_add_code);
-            s.setAttribute("data-api_url", "https://svc.rootrez.com");
+            s.setAttribute("data-value_add_code", value_add_code);
+            s.setAttribute("data-api_url", "https://svc.rootrez.com");  
             t.parentNode.insertBefore(s, t);
         };
         window.addEventListener
