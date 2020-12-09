@@ -65,7 +65,8 @@
             s.setAttribute("data-title_text",title_text);
             s.setAttribute("data-tagline_text", tagline_text);
             s.setAttribute("data-value_add_code", value_add_code);
-            s.setAttribute("data-api_url", "https://api-staging.rootrez.com");                
+            s.setAttribute("data-api_url", "https://api-staging.rootrez.com");   
+            s.setAttribute("data-locale", "en-us");  //Default: en-us. Also available: fr-ca             
 			t.parentNode.insertBefore(s, t);
             };
             window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
@@ -143,6 +144,8 @@
                             	Change the <code>value_add_code</code> to match the code you want to apply to every user. Leave this blank to show a
                             	list of available value adds and discounts. Note: Value add list is displayed after selecting a stay date range, and
                             	only shows those value adds which are valid in the chosen date range.</li>
+                            <li>Localization - to display the calendar in another language, modify the <code>data-locale</code> value to one of the 
+                            	available translations. Currently available translations are: "en-us" for English, and "fr-ca" for French.</li>
                             <li>Place the <code>&lt;div id="RootRezWidget"&gt;&lt;/div&gt;</code> container on your page wherever you want our
                                 widget to appear.</li>
                             <li>That's it! We'll handle the rest!</li>
@@ -215,7 +218,7 @@
             s.setAttribute("data-tagline_text", tagline_text);
             s.setAttribute("data-value_add_code", value_add_code);
             s.setAttribute("data-api_url", "https://svc.rootrez.com");  
-            s.setAttribute("data-locale", "fr-ca");  //Default: en-us. Also available: fr-ca
+            s.setAttribute("data-locale", "en-us");  //Default: en-us. Also available: fr-ca
             t.parentNode.insertBefore(s, t);
         };
         window.addEventListener

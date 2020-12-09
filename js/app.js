@@ -62,6 +62,17 @@ define([
     $("#guestApply").click(function(){
       $(".search_occupancy").toggleClass("open");
     });
+    
+    
+      if(settings.locale == "fr-ca"){
+      	$("#guests_txt").text("Clients ");
+      	$("#localeSearch").text("Rechercher");
+      	$("#guestApply").text("Appliquer");
+      	$("#guestCancel").text("Annuler");
+      	$("#localeChildren").text("Enfants");
+      	$("#localeAdults").text("Adultes");
+      	$("#rootrez_daterangepicker").text("Arrivée → Départ");
+      }
 
     // Guest Counter
     var $apbutton = $(".adults .p-btn");
@@ -221,54 +232,54 @@ define([
       applyClass: "",
       cancelClass: "",
       buttonClasses: "",
-    };
-
-	if(settings.locale == 'fr-ca'){
-		console.log('Reading fr-ca in app.js!')
-	} else {
-		console.log('reading settings.locale did not work.');
-	}
-
-	dpSettings.push({"locale": {
-        "format": "YYYY-MM-DD",
+      "locale": {
+        "format": "MM/DD/YYYY",
         "separator": " - ",
-        "applyLabel": "Apply",
-        "cancelLabel": "Cancel",
+        "applyLabel": "Appliquer",
+        "cancelLabel": "Annuler",
         "fromLabel": "From",
         "toLabel": "To",
         "customRangeLabel": "Custom",
         "weekLabel": "W",
         "daysOfWeek": [
-            "Su",
-            "Mo",
-            "Tu",
-            "We",
-            "Th",
-            "Fr",
-            "Sa"
+            "di",
+			"lu",
+			"ma",
+			"me",
+			"je",
+			"ve",
+			"sa"
         ],
         "monthNames": [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"
+            "janvier",
+			"février",
+			"mars",
+			"avril",
+			"mai",
+			"juin",
+			"juillet",
+			"août",
+			"septembre",
+			"octobre",
+			"novembre",
+			"décembre"
         ],
         "firstDay": 1
-      }});
+      }
+    };
+
 	
     $("#rootrez-widget-form #rootrez_daterangepicker").daterangepicker(
       dpSettings,
       function (start, end) {
+      	var dispFormat;
+      	if(settings.locale == "en-us" || settings.locale == ""){
+      		dispFormat = "MMM D YYYY";
+      	} else if(settings.locale == "fr-ca"){
+      		dispFormat = "YYYY-MM-DD";
+      	}
         $("#rootrez_daterangepicker").html(
-          start.format("MMM D, YYYY") + " &rarr; " + end.format("MMM D, YYYY")
+          start.format(dispFormat) + " &rarr; " + end.format(dispFormat)
         );
         $("#Checkin").val(start.format("MM/DD/YYYY"));
         $("#Checkout").val(end.format("MM/DD/YYYY"));

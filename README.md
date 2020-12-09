@@ -69,6 +69,7 @@ You can refer to index.html on your localhost or the demo site [https://assets.r
             s.setAttribute("data-tagline_text", tagline_text);
             s.setAttribute("data-value_add_code", value_add_code);
             s.setAttribute("data-api_url", "https://svc.rootrez.com");  
+            s.setAttribute("data-locale", "en-us");  //Default: en-us. Also available: fr-ca   
             t.parentNode.insertBefore(s, t);
         };
         window.addEventListener
@@ -103,6 +104,7 @@ var submission_url = "https://lodging.bookwesteros.com/search";
 | title_text   | Optional widget title. replace with empty strings to remove        |
 | tagline_text   | Optional widget tagline. replace with empty strings to remove        |
 | value_add_code   | Optionally use one value add for all customers, instead of showing a list for them to choose from        |
+| locale   | Optional localization. Change to "fr-ca" for French localized widget calendar and text        |
 
 ## Developer Info
 [Building an embeddable Javascript widget](https://thomassileo.name/blog/2014/03/27/building-an-embeddable-javascript-widget-third-party-javascript/)
