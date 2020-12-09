@@ -38,13 +38,13 @@ You can refer to index.html on your localhost or the demo site [https://assets.r
 
 </style>
 <script>
-    (function (window, document) {
+(function (window, document) {
         var loader = function () {
 
             // required (update with your lodging subdomain):
-            var submission_url = "https://lodging.publisher-domain.com";
-
-            // optional widget title. replace with empty strings to remove.
+            var submission_url = "https://lodging.publisher-domain.com/search";
+            
+			// optional widget title. replace with empty strings to remove.
             var title_text = "Book Your Stay Now!";
             var tagline_text = "Add dates and guests and click Search";
 
@@ -53,20 +53,27 @@ You can refer to index.html on your localhost or the demo site [https://assets.r
             var default_checkout = ""; // MM/DD/YYYY (e.g. 06/15/2020)
             var min_checkin = ""; // MM/DD/YYYY (e.g. 06/01/2020)
             var max_checkout = ""; // MM/DD/YYYY (e.g. 06/28/2020)
+            
+            var value_add_code = ""; //Leave blank. This is for optionally overriding available value-adds.
 
             var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];
             s.id = "rootrezScript";
-            s.src = "https://assets.rootrez.com/book-your-stay/widget-2.min.js";
-            s.setAttribute("data-default_checkin", default_checkin);
+            s.src = "https://assets.rootrez.com/book-your-stay/widget.min.js";
+			s.setAttribute("data-default_checkin", default_checkin);
             s.setAttribute("data-default_checkout", default_checkout);
             s.setAttribute("data-min_checkin",min_checkin);
+	    	s.setAttribute("data-publisher_key","YOUR API KEY HERE");
             s.setAttribute("data-max_checkout",max_checkout);
             s.setAttribute("data-submission_url",submission_url);
             s.setAttribute("data-title_text",title_text);
             s.setAttribute("data-tagline_text", tagline_text);
+            s.setAttribute("data-value_add_code", value_add_code);
+            s.setAttribute("data-api_url", "https://svc.rootrez.com");  
             t.parentNode.insertBefore(s, t);
         };
-        window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+        window.addEventListener
+            ? window.addEventListener("load", loader, false)
+            : window.attachEvent("onload", loader);
     })(window, document);
 </script>
 <div id="RootRezWidget"></div>
@@ -81,14 +88,9 @@ var submission_url = "https://lodging.bookwesteros.com/referral?Code=rz-78th-ann
 For discounts and value-adds:
 
 ```javascript
-var submission_url = "https://lodging.bookwesteros.com/?PromoCode=FunPack";
+var submission_url = "https://lodging.bookwesteros.com/search";
 ```
 
-And for an affiliate with a discount/value-add:
-
-```javascript
-var submission_url = "https://lodging.bookwesteros.com/referral?Code=rz-78th-annual-widget-festival&PromoCode=FunPack";
-```
 ## Settings
 
 | Variable      | Description |
@@ -98,6 +100,9 @@ var submission_url = "https://lodging.bookwesteros.com/referral?Code=rz-78th-ann
 | default_checkout      | Checkout date the date picker will default to        |
 | min_checkin   | The minimum allowed check-in date        |
 | max_checkout   | The maximum allowed check-out date        |
+| title_text   | Optional widget title. replace with empty strings to remove        |
+| tagline_text   | Optional widget tagline. replace with empty strings to remove        |
+| value_add_code   | Optionally use one value add for all customers, instead of showing a list for them to choose from        |
 
 ## Developer Info
 [Building an embeddable Javascript widget](https://thomassileo.name/blog/2014/03/27/building-an-embeddable-javascript-widget-third-party-javascript/)

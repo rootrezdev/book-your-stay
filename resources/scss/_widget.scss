@@ -1,151 +1,390 @@
 #widget-title-box {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 10px;
-    word-wrap: normal;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+  word-wrap: normal;
 }
-#widget-title {
-    padding: 0 10px;
-    margin: 5px;
-    text-align: center;
-}#widget-tagline {
-    padding: 0 10px;
-    margin: 5px;
-    text-align: center;
-}
-.rootrez_widget_form_wrapper {
-    max-width: 800px;
-    background-color: #fff;
-    border-radius: 3px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.125);
-    margin: 0 auto;
-    overflow: hidden;
-    // border: 1px solid red;
 
+#widget-title {
+  padding: 0 10px;
+  margin: 5px;
+  text-align: center;
+}
+
+#widget-tagline {
+  padding: 0 10px;
+  margin: 5px;
+  text-align: center;
+}
+
+.rootrez_widget_form_wrapper {
+  max-width: 520px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: var(--form-border);
+  box-shadow: var(--box-shadow);
+  margin: 0 auto;
+  color: var(--book-color);
+
+  @include mq(tablet-portrait-up) {
+    border-radius: var(--border-radius);
+  }
+
+  &.has-deals {
+    max-width: 800px;
+  }
+
+  // No deals scaffolding
+  &.no-deals {
+    #rootrez-widget-form {
+      .search_dates {
+        @include mq(phone-only) {
+          border-right: 1px solid var(--border-color);
+          //border-bottom: none;
+        }
+      }
+
+      .search_occupancy {
+        flex-basis: 30%;
+        max-width: 30%;
+        @include mq(phone-only) {
+          flex: 0 1 50%;
+          max-width: 50%;
+          border-bottom: none;
+        }
+      }
+
+      .search_submit {
+        flex-basis: 20%;
+
+        @include mq(phone-only) {
+          flex: 0 1 50%;
+          max-width: 50%;
+          //border-bottom: none;
+        }
+      }
+    }
+  }
 }
 
 #rootrez-widget-form {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0;
 
-    .search {
-        &_dates {
-            flex: 1 1 calc(40% - 1px);
-            border-right: 1px solid #ececec;
-            height: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+  > div {
+    box-sizing: border-box;
+  }
 
-            @include mq(phone-only) {
-                flex-basis: 100%;
-                text-align: center;
-                border-bottom: 1px solid $border-color;
-                border-right: none;
-            }
-        }
+  .search {
+    &_dates {
+      flex: 1 1 35%;
+      border-right: 1px solid var(--border-color);
+      height: 60px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 16px;
+      font-size: 14px;
 
-        &_extras {
-            -webkit-box-flex: 0;
-            flex: 1 1 40%;
-            display: -webkit-box;
-            display: flex;
-            -webkit-box-pack: justify;
-            justify-content: space-between;
-            -webkit-box-align: center;
-            align-items: center;
+      svg {
+        fill: var(--primary-color);
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+      }
 
-            @include mq(phone-only) {
-                flex-basis: 100%;
-            }
-
-
-            select {
-                -webkit-appearance: none;
-                appearance: none;
-                outline: 0;
-                box-shadow: none;
-                border: 0 !important;
-                font-family: var(--book-font);
-                line-height: 3;
-                overflow: hidden;
-                font-size: 13px;
-                cursor: pointer;
-                background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E");
-                background-position: 100% center;
-                background-repeat: no-repeat;
-                background-size: 9px;
-                padding-right: 20px;
-                margin-right: 20px;
-                background-color: white;
-            }
-        }
-
-        &_occupancy {
-            width: 100%;
-            display: -webkit-box;
-            display: flex;
-            -webkit-box-flex: 0;
-            flex: 0 1 50%;
-            padding: 0 10px;
-            justify-content: space-around;
-
-            .occupancy_adults {}
-
-            .occupancy_children {}
-        }
-
-        &_promo_code {
-            flex: 0 1 50%;
-
-            @include mq(phone-only) {
-                display: -webkit-box;
-                display: flex;
-                -webkit-box-pack: center;
-                justify-content: center;
-            }
-        }
-
-        &-wrapper {
-            flex: 1 1 20%;
-
-            @include mq(phone-only) {
-                flex-basis: 100%;
-            }
-
-
-            button {
-                width: 100%;
-                margin: 0;
-                padding: 0;
-                border: none;
-                background-color: var(--primary-color);
-                text-transform: uppercase;
-                color: white;
-                height: 60px;
-                cursor: pointer;
-                font-size: 14px;
-                font-family: var(--book-font);
-
-                &:hover {
-                    background-color: var(--secondary-color);
-                }
-            }
-        }
+      @include mq(phone-only) {
+        flex-basis: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--border-color);
+        border-right: none;
+      }
     }
 
-    span {
-        padding: 18px 10px;
+    &_promo_code {
+      flex: 0 1 25%;
+      border-right: 1px solid var(--border-color);
+      height: 60px;
+      padding: 16px;
+      display: none;
+      flex-flow: row nowrap;
+      align-items: center;
+      position: relative;
+      max-width: 25%;
+
+      .has-deals & {
+        display: flex;
+      }
+
+      &.open {
+        z-index: 5;
+      }
+
+      @include mq(phone-only) {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+
+      &-event {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 60px;
+        width: 100%;
+      }
+
+      svg {
+        fill: var(--primary-color);
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+      }
+
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        max-width: 80%;
         border: none;
+      }
+
+      h3 {
+        font-size: 14px;
+        font-weight: normal;
         margin: 0;
-        cursor: pointer;
-        font-family: var(--book-font);
+        display: flex;
+        align-items: center;
+        width: 92%;
+
+        span {
+          white-space: nowrap;
+          overflow: hidden;
+          display: inline-block;
+          width: 100%;
+        }
+      }
+
+      .deals-list {
+        ul {
+          margin: 0 -8px;
+          padding: 0;
+          list-style: none;
+          li {
+            font-size: 12px;
+            padding: 5px 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+            cursor: pointer;
+
+            &:hover,
+            &.selected {
+              background: var(--primary-color);
+              color: white;
+              
+             svg {
+               fill: white;
+             }
+            }
+            
+            
+            span.tip {
+              margin-right: 4px;
+              width: 15px;
+            }
+            
+            svg {
+              width: 12px;
+              height: 12px;
+              
+            }
+          }
+        }
+      }
     }
 
-    #adults, #children, #PromoCode {}
+    &_occupancy {
+      flex: 0 1 25%;
+      height: 60px;
+      padding: 16px;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      position: relative;
+      max-width: 25%;
+
+      @include mq(phone-only) {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+
+      &.open {
+        z-index: 5;
+      }
+
+      &-event {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 60px;
+        width: 100%;
+      }
+
+      h3.guest-total {
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+        display: flex;
+        align-items: center;
+      }
+
+      svg {
+        fill: var(--primary-color);
+        width: 21px;
+        height: 20px;
+        margin-right: 8px;
+
+        .counter_wrap & {
+          margin: 0;
+        }
+      }
+
+      .counter_wrap {
+        svg {
+          margin-right: 1px;
+        }
+      }
+    }
+
+    &_submit {
+      flex: 0 1 15%;
+      z-index: 1;
+      //width: 20%;
+      border-radius: var(--border-radius);
+
+      @include mq(phone-only) {
+        flex-basis: 100%;
+      }
+
+      button {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background-color: var(--primary-color);
+        text-transform: uppercase;
+        color: white;
+        height: 60px;
+        cursor: pointer;
+        font-size: 14px;
+        font-family: var(--book-font);
+        border-radius: 0;
+
+        @include mq(tablet-portrait-up) {
+          border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        &:hover {
+          background-color: var(--secondary-color);
+        }
+      }
+    }
+  }
+
+  .booking-extras-options {
+    position: absolute;
+    top: 70px;
+    left: -1px;
+    background: white;
+    width: calc(100% - 16px);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    min-width: 140px;
+    z-index: 0;
+
+    .open & {
+      opacity: 1;
+      top: 60px;
+      z-index: 2;
+    }
+  }
+
+  span {
+    //padding: 18px 10px;
+    //border: none;
+    // margin: 0;
+    //cursor: pointer;
+    //font-family: var(--book-font);
+  }
+
+  .expander {
+    position: absolute;
+    right: 0;
+    background-color: transparent;
+
+    svg {
+      fill: black;
+      width: 10px;
+      height: 6px;
+      transition: transform 0.3s ease;
+      transform-origin: 5px 3px;
+    }
+
+    .open & {
+      svg {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  .search_occupancy.open,
+  .search_promo_code.open {
+    .expander {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    .booking-extras-options {
+      opacity: 1;
+      top: 60px;
+    }
+  }
+}
+
+.booking-extras-actions {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: 20px 0 0;
+
+  a {
+    text-decoration: none;
+    font-size: 12px;
+  }
+
+  .cancel {
+    color: #aeaeae;
+  }
+
+  .apply {
+    background-color: var(--primary-color);
+    text-transform: uppercase;
+    padding: 3px 15px;
+    border-radius: var(--border-radius);
+    color: white;
+    font-weight: bolder;
+    transition: 0 0.3s ease-in-out;
+
+    &:hover {
+      background-color: var(--secondary-color);
+    }
+  }
 }
