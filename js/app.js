@@ -223,6 +223,47 @@ define([
       buttonClasses: "",
     };
 
+	if(settings.locale == 'fr-ca'){
+		console.log('Reading fr-ca in app.js!')
+	} else {
+		console.log('reading settings.locale did not work.');
+	}
+
+	dpSettings.push({"locale": {
+        "format": "YYYY-MM-DD",
+        "separator": " - ",
+        "applyLabel": "Apply",
+        "cancelLabel": "Cancel",
+        "fromLabel": "From",
+        "toLabel": "To",
+        "customRangeLabel": "Custom",
+        "weekLabel": "W",
+        "daysOfWeek": [
+            "Su",
+            "Mo",
+            "Tu",
+            "We",
+            "Th",
+            "Fr",
+            "Sa"
+        ],
+        "monthNames": [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ],
+        "firstDay": 1
+      }});
+	
     $("#rootrez-widget-form #rootrez_daterangepicker").daterangepicker(
       dpSettings,
       function (start, end) {
