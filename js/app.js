@@ -222,7 +222,7 @@ define([
       var today_date = mm + "/" + dd + "/" + yyyy;
       settings.max_checkout = today_date;
     }
-
+if(settings.locale == "fr-ca"){
     var dpSettings = {
       minDate: settings.min_checkin,
       maxDate: settings.max_checkout,
@@ -267,7 +267,18 @@ define([
         "firstDay": 1
       }
     };
-
+} else {
+	var dpSettings = {
+      minDate: settings.min_checkin,
+      maxDate: settings.max_checkout,
+      dateLimit: {
+        days: 28,
+      },
+      applyClass: "",
+      cancelClass: "",
+      buttonClasses: ""
+    };
+}
 	
     $("#rootrez-widget-form #rootrez_daterangepicker").daterangepicker(
       dpSettings,
