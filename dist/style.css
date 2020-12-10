@@ -39,7 +39,7 @@
         max-width: 50%;
         border-bottom: none; } }
   .rootrez_widget_form_wrapper.no-deals #rootrez-widget-form .search_submit {
-    flex-basis: 20%; }
+    flex-basis: 22.5%; }
     @media (max-width: 599px) {
       .rootrez_widget_form_wrapper.no-deals #rootrez-widget-form .search_submit {
         flex: 0 1 50%;
@@ -431,7 +431,8 @@
       text-transform: uppercase;
       min-width: 32px;
       font-size: 12px;
-      font-weight: 400; }
+      font-weight: 400;
+      vertical-align: middle; }
     .daterangepicker .calendar th {
       font-size: 15px;
       font-weight: 400; }
