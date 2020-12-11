@@ -72,6 +72,8 @@ define([
       	$("#localeChildren").text("Enfants");
       	$("#localeAdults").text("Adultes");
       	$("#rootrez_daterangepicker").text("Arrivée → Départ");
+      	$("#dealApply").text("Appliquer");
+      	$("#dealCancel").text("Annuler");
       }
 
     // Guest Counter
