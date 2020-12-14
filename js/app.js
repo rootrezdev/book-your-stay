@@ -286,10 +286,10 @@ if(settings.locale == "fr-ca"){
       dpSettings,
       function (start, end) {
       	var dispFormat;
-      	if(settings.locale == "en-us" || settings.locale == ""){
-      		dispFormat = "MMM D YYYY";
-      	} else if(settings.locale == "fr-ca"){
+      	if(settings.locale == "fr-ca"){
       		dispFormat = "YYYY-MM-DD";
+      	} else{
+      		dispFormat = "MMM D YYYY";
       	}
         $("#rootrez_daterangepicker").html(
           start.format(dispFormat) + " &rarr; " + end.format(dispFormat)
