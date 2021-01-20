@@ -10,33 +10,35 @@ You can refer to index.html on your localhost or the demo site [https://assets.r
 
 ```html
 <style>
+        .container {
+            max-width: 800px;
+        }
+        :root {
+            --primary-color: orange;
+            --secondary-color: pink;
+            --book-font: 'Roboto Condensed',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            --border-radius: 200px;
+            --border-color: #ececec;
+            --form-border: 1px solid #ececec;
+            --box-shadow: none;
+        }
 
-    :root {
-        --primary-color: orange;
-        --secondary-color: pink;
-        --book-font: 'proxima-nova';
-    }
+        #RootRezWidget{
+            font-family: var(--book-font);
+            box-shadow: none !important;
+        }
 
-    #RootRezWidget{
-        font-family: var(--book-font);
-    }
+        #widget-title {
+            font-size: 2em;
+            font-weight: bold;
+            text-align: left !important;
+        }
+        #widget-tagline {
+            font-size: 1.2em;
+            text-align: left !important;
+        }
 
-    // uncomment and modify to override title alignment, colors, fonts, etc.
-    /* #widget-title {
-        text-align: left !important;
-    }
-    #widget-tagline {
-        text-align: left !important;
-    } */
-
-    @font-face {
-        font-family: 'proxima-nova';
-        src: url("https://assets.rootrez.com/rr-rangepicker/dist/fonts/proxima-nova/proximanova-regular-webfont.woff2") format("woff2"), url("https://assets.rootrez.com/rr-rangepicker/dist/fonts/proxima-nova/proximanova-regular-webfont.woff") format("woff");
-        font-weight: normal;
-        font-style: normal;
-    }
-
-</style>
+    </style>
 <script>
 (function (window, document) {
         var loader = function () {
