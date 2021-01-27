@@ -300,7 +300,7 @@ if(settings.locale == "fr-ca"){
         $.ajax({
           type: "GET",
           cache: false,
-          url: settings.api_url + "/publisher/v3.0/discounts/all.json",
+          url: settings.api_url + "/publisher/v3.0/discounts/grouped.json",
           data: {
             checkin: start.format("MM/DD/YYYY"),
             checkout: end.format("MM/DD/YYYY"),
