@@ -120,7 +120,8 @@
         white-space: nowrap;
         overflow: hidden;
         display: inline-block;
-        width: 100%; }
+        width: 100%;
+        color: var(--book-color); }
     #rootrez-widget-form .search_promo_code .deals-list ul {
       margin: 0 -8px;
       padding: 0;
@@ -170,7 +171,8 @@
       font-weight: normal;
       margin: 0;
       display: flex;
-      align-items: center; }
+      align-items: center;
+      color: var(--book-color); }
     #rootrez-widget-form .search_occupancy svg {
       fill: var(--primary-color);
       width: 21px;
