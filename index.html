@@ -18,8 +18,7 @@
         :root {
             --primary-color: orange;
             --secondary-color: pink;
-            --book-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            --book-color: black;
+            --book-font: 'Roboto Condensed',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
             --border-radius: 200px;
             --border-color: #ececec;
             --form-border: 1px solid #ececec;
@@ -157,27 +156,34 @@
                     <pre><code class="css">
 # place in your page's head section
 &lt;style&gt;
-    :root {
-        --primary-color: orange;
-        --secondary-color: pink;
-    }
+    .container {
+            max-width: 800px;
+        }
+        :root {
+            --primary-color: orange;
+            --secondary-color: pink;
+            --book-font: 'Roboto Condensed',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            --border-radius: 200px;
+            --border-color: #ececec;
+            --form-border: 1px solid #ececec;
+            --box-shadow: none;
+        }
 
-    #RootRezWidget {
-        // should inherit your site's fonts, but can add here if needed.
-    }
-
-    // uncomment and modify to override title alignment, colors, fonts, etc.
-    /* #widget-title {
-        text-align: left !important;
-    }
-    #widget-tagline {
-        text-align: left !important;
-    } */
-
-    @font-face {
-        font-weight: normal;
-        font-style: normal;
-    }
+        #RootRezWidget{
+        // should inherit your site's fonts, but can add here if needed. Example lines:
+            /* font-family: var(--book-font);
+            box-shadow: none !important; */
+        }
+	// uncomment and modify to override title alignment, colors, fonts, etc.
+        /* #widget-title {
+            font-size: 2em;
+            font-weight: bold;
+            text-align: left !important;
+        }
+        #widget-tagline {
+            font-size: 1.2em;
+            text-align: left !important;
+        } */
 &lt;/style&gt;
 </code></pre>
                     <br>
@@ -190,7 +196,7 @@
         var loader = function () {
 
             // required (update with your lodging subdomain):
-            var submission_url = "http://lodging.visitsaltlake.rootrez.review/search";
+            var submission_url = "https://lodging.visitsaltlake.com/search";
             // optional widget title. replace with empty strings to remove.
             var title_text = "Book Your Downtown Lodging Here";
             var tagline_text = "Simply put, nobody knows Salt Lake better, ";
