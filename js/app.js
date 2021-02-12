@@ -12,6 +12,10 @@ define([
     init: function (config) {
       // get the settings and make them available through the app
       settings = config;
+      
+      if(!settings.hasOwnProperty('locale') || settings.locale === undefined){
+      	settings.locale = "en-us";
+      }
 
       var $widgetStyle = $("<style></style>", {
         type: "text/css",
