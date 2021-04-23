@@ -121,7 +121,8 @@
         overflow: hidden;
         display: inline-block;
         width: 100%;
-        color: var(--book-color); }
+        color: var(--book-color);
+        text-shadow: none; }
     #rootrez-widget-form .search_promo_code .deals-list ul {
       margin: 0 -8px;
       padding: 0;
