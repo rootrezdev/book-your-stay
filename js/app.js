@@ -49,15 +49,6 @@ define([
       $(".search_promo_code-event").click(function () {
         $(".search_promo_code").toggleClass("open");
       });
-
-      $(".search_promo_code .cancel").click(function () {
-        $(".search_promo_code").toggleClass("open");
-      });
-    
-    $("#dealApply").click(function(){
-      $(".search_promo_code").toggleClass("open");
-      $('.search_promo_code-event h3 span').text($('.deal-select.selected span').text());
-    });
     
     $("#guestApply").click(function(){
       $(".search_occupancy").toggleClass("open");
@@ -384,6 +375,8 @@ if(settings.locale == "fr-ca"){
         $(this).addClass("selected");
         //console.log("Clicked discount id: "+selectedId);
         settings.value_add_code = selectedId;
+      	$(".search_promo_code").toggleClass("open");
+      	$('.search_promo_code-event h3 span').text($('.deal-select.selected span').text());
       });
       //$("#PromoCode").addClass("show");
       //$("#PromoCode").removeClass("hide");
