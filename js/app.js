@@ -336,10 +336,16 @@ if(settings.locale == "fr-ca"){
       var formData = $(this).serialize();
       var numAdults = $("#adultnumber").val();
       var numChildren = $("#childnumber").val();
+      if(settings.submission_url.indexOf("?") == -1){
+	      	settings.submission_url = settings.submission_url + "?";
+		} else {
+	      	settings.submission_url = settings.submission_url + "&";
+		}
       if(settings.value_add_code != "") {
-        var finalUrl = settings.submission_url + "?PromoCode=" + settings.value_add_code + "&" + formData + "&GuestsAdult=" + numAdults + "&GuestsChildren=" + numChildren;
+		
+        var finalUrl = settings.submission_url + "PromoCode=" + settings.value_add_code + "&" + formData + "&GuestsAdult=" + numAdults + "&GuestsChildren=" + numChildren;
       } else {
-        var finalUrl = settings.submission_url + "?" + formData + "&GuestsAdult=" + numAdults + "&GuestsChildren=" + numChildren;
+        var finalUrl = settings.submission_url + formData + "&GuestsAdult=" + numAdults + "&GuestsChildren=" + numChildren;
       }
       //console.log(finalUrl);
       window.location.href = finalUrl;
