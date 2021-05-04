@@ -53,13 +53,13 @@ define([
       $(".search_promo_code-event").click(function () {
         $(".search_promo_code").toggleClass("open");
       });
-      $(".search_promo_code .cancel").click(function () {
+      //$(".search_promo_code .cancel").click(function () {
       	//removed. This comment added to force github to recognize this change in a pull request.
-      });
+      //});
     
-    $("#dealApply").click(function(){
+    //$("#dealApply").click(function(){
       	//removed. This comment added to force github to recognize this change in a pull request.
-    });
+    //});
     
     $("#guestApply").click(function(){
       $(".search_occupancy").toggleClass("open");
