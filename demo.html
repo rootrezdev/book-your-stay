@@ -61,12 +61,12 @@
                 // var default_checkout = moment().add(18, 'days').format('MM/DD/YYYY');
                 // var min_checkin = moment().format('MM/DD/YYYY');
                 // var max_checkout = moment().add(5, 'years').format('MM/DD/YYYY');
-                var submission_url = "http://lodging.bookwesteros.com/search?PromoCode=FUNPACK";
-                var value_add_code = "FUNPACK";
+                var submission_url = "http://lodging.bookwesteros.com/search";
+                var value_add_code = "";
 
                 var s = document.createElement("script"), t = document.getElementsByTagName("script")[0];
                 s.id = "rootrezScript";
-                s.src = "widget-2.min.js?v=3.6";
+                s.src = "widget.min.js";
                 s.setAttribute("data-default_checkin", default_checkin);
                 s.setAttribute("data-default_checkout", default_checkout);
                 s.setAttribute("data-min_checkin",min_checkin);

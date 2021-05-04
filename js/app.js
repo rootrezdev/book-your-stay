@@ -53,15 +53,6 @@ define([
       $(".search_promo_code-event").click(function () {
         $(".search_promo_code").toggleClass("open");
       });
-
-      $(".search_promo_code .cancel").click(function () {
-        $(".search_promo_code").toggleClass("open");
-      });
-    
-    $("#dealApply").click(function(){
-      $(".search_promo_code").toggleClass("open");
-      $('.search_promo_code-event h3 span').text($('.deal-select.selected span').text());
-    });
     
     $("#guestApply").click(function(){
       $(".search_occupancy").toggleClass("open");
@@ -351,10 +342,16 @@ if(settings.locale == "fr-ca"){
       var formData = $(this).serialize();
       var numAdults = $("#adultnumber").val();
       var numChildren = $("#childnumber").val();
+      if(settings.submission_url.indexOf("?") == -1){
+	      	settings.submission_url = settings.submission_url + "?";
+		} else {
+	      	settings.submission_url = settings.submission_url + "&";
+		}
       if(settings.value_add_code != "") {
-        var finalUrl = settings.submission_url + "?PromoCode=" + settings.value_add_code + "&" + formData + "&GuestsAdult=" + numAdults + "&GuestsChildren=" + numChildren;
+		
+        var finalUrl = settings.submission_url + "PromoCode=" + settings.value_add_code + "&" + formData + "&GuestsAdult=" + numAdults + "&GuestsChildren=" + numChildren;
       } else {
-        var finalUrl = settings.submission_url + "?" + formData + "&GuestsAdult=" + numAdults + "&GuestsChildren=" + numChildren;
+        var finalUrl = settings.submission_url + formData + "&GuestsAdult=" + numAdults + "&GuestsChildren=" + numChildren;
       }
       //console.log(finalUrl);
       window.location.href = finalUrl;
@@ -390,6 +387,8 @@ if(settings.locale == "fr-ca"){
         $(this).addClass("selected");
         //console.log("Clicked discount id: "+selectedId);
         settings.value_add_code = selectedId;
+      	$(".search_promo_code").toggleClass("open");
+      	$('.search_promo_code-event h3 span').text($('.deal-select.selected span').text());
       });
       //$("#PromoCode").addClass("show");
       //$("#PromoCode").removeClass("hide");
