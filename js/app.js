@@ -12,6 +12,10 @@ define([
     init: function (config) {
       // get the settings and make them available through the app
       settings = config;
+      
+      if(!settings.hasOwnProperty('locale') || settings.locale === undefined){
+      	settings.locale = "en-us";
+      }
 
       var $widgetStyle = $("<style></style>", {
         type: "text/css",
@@ -288,19 +292,21 @@ if(settings.locale == "fr-ca"){
         $("#Checkin").val(start.format("MM/DD/YYYY"));
         $("#Checkout").val(end.format("MM/DD/YYYY"));
 
-        $.ajax({
-          type: "GET",
-          cache: false,
-          url: settings.api_url + "/publisher/v3.0/discounts/grouped.json",
-          data: {
-            checkin: start.format("MM/DD/YYYY"),
-            checkout: end.format("MM/DD/YYYY"),
-            key: settings.publisher_key,
-          },
-          success: function (response) {
-            buildDropdown(response, $("#deals-ul"), "No offers available for selected dates");
-          },
-        });
+		if(settings.value_add_code == ""){
+	        $.ajax({
+	          type: "GET",
+	          cache: false,
+	          url: settings.api_url + "/publisher/v3.0/discounts/grouped.json",
+	          data: {
+	            checkin: start.format("MM/DD/YYYY"),
+	            checkout: end.format("MM/DD/YYYY"),
+	            key: settings.publisher_key,
+	          },
+	          success: function (response) {
+	            buildDropdown(response, $("#deals-ul"), "No offers available for selected dates");
+	          },
+	        });
+	      }
       }
     );
 
